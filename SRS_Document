@@ -44,3 +44,17 @@
 	10)The admin should be able to respond to user queries and issues, providing assistance and resolving problems.
 	11)The admin should be able to communicate important information or updates to users through the platform, such as changes in policies or upcoming maintenance.
 
+  - User
+  
+	1) User should be able to create accounts.
+	2) User should get secure login and authentication mechanisms.
+	3) User should be able to submit, edit, and delete recipes.
+	4) Recipes added by user should include details like ingredients, instructions, and serving sizes.
+	5) User should be able to search functionality to discover recipes based on ingredients, cuisine, and dietary preferences.
+	6) User should be able to plan meals for the day or for the week.
+	7) User can generate a shopping list based on selected recipes.
+	8) User should be able to customize the shopping list.
+	9) User should get nutritional content such as calaories per serving for each recipe.
+	10) User should get aggregate nutritional information for the entire meal plan.
+	11) User should be able to like, comment, and share recipes.
+	12) User can follow other users and receive updates on their activity.
