@@ -10,8 +10,8 @@
 
 ## Team Members (Stake Holders) :
 
-	- Admin
-	- User
+- Admin
+- User
 
 ## Objective (Purpose) :
 
@@ -58,3 +58,14 @@
 	10) User should get aggregate nutritional information for the entire meal plan.
 	11) User should be able to like, comment, and share recipes.
 	12) User can follow other users and receive updates on their activity.
+
+## Non-Functional Requirements:
+
+- Performance
+	1) The web-application should handle a large user base and concurrent request.
+	2) The web-application should work fast and availability should be 24x7.
+- Security 
+	1) Implement secure data storage and transmission.
+	2) Protection against web malfunctions such as SQL injections, cross-site scripting.
+- Usability 
+	1) 
