@@ -10,8 +10,8 @@
 
 ## Team Members (Stake Holders) :
 
-- Admin
-- User
+	- Admin
+	- User
 
 ## Objective (Purpose) :
 
@@ -61,14 +61,34 @@
 
 ## Non-Functional Requirements:
 
-- Performance
-	1) The web-application should handle a large user base and increasing data traffic.
-	2) The web-application should work fast and availability should be 24x7.
-- Security 
-	1) Implement secure data storage and transmission.
-	2) Protection against web malfunctions such as SQL injections, cross-site scripting.
-- Usability 
-	1) Provide user-friendly interface
-	2) Web-application accessibility on various devices.
-- Scalability
-	1) The system should be scalable to accommodate future growth.
+	- Performance
+		1) The web-application should handle a large user base and increasing data traffic.
+		2) The web-application should work fast and availability should be 24x7.
+		
+	- Security 
+		1) Implement secure data storage and transmission.
+		2) Protection against web malfunctions such as SQL injections, cross-site scripting.
+		
+	- Usability 
+		1) Provide user-friendly interface
+		2) Web-application accessibility on various devices.
+		
+	- Scalability
+		1) The system should be scalable to accommodate future growth.
+		
+	- Reliability
+		1) Minimum downtime for maintenance and updates.
+		2) Regular data backups to prevent data loss.
+	
+## Constraints
+	
+	- The web application should support common web browsers such as Chrome, Safari, Firefox, etc.
+	- Compliance with relevant data protection regulagtions.
+
+## Assumptions and Dependancies
+
+	- Users will have a stable internet connection.
+	- Users will provide accurate personal information.
+	- Users will provide accurate recepies for food items.
+	- Users will provide accurate nutritional information for recipes.
+	
