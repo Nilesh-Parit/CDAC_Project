@@ -31,7 +31,6 @@
 ## Functional Requirements:
 
   - Admin :
-  
 	1) The admin should be able to login himself. 
 	2) The admin should be able to create and manage Users.
 	3) The admin should be able to create, modify, and deactivate user accounts.
@@ -41,11 +40,10 @@
 	7) The admin should have access to user activity logs, including login/logout times, recipe submissions, and other significant actions.
 	8) The admin should be able to configure and manage automated email notifications, such as account verification, password reset, and system updates.
 	9) The admin should be able to adjust system parameters, such as maximum recipe size, image upload limits, and other application settings.
-	10)The admin should be able to respond to user queries and issues, providing assistance and resolving problems.
-	11)The admin should be able to communicate important information or updates to users through the platform, such as changes in policies or upcoming maintenance.
+	10) The admin should be able to respond to user queries and issues, providing assistance and resolving problems.
+	11) The admin should be able to communicate important information or updates to users through the platform, such as changes in policies or upcoming maintenance.
 
   - User
-  
 	1) User should be able to create accounts.
 	2) User should get secure login and authentication mechanisms.
 	3) User should be able to submit, edit, and delete recipes.
