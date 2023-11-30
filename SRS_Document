@@ -62,10 +62,13 @@
 ## Non-Functional Requirements:
 
 - Performance
-	1) The web-application should handle a large user base and concurrent request.
+	1) The web-application should handle a large user base and increasing data traffic.
 	2) The web-application should work fast and availability should be 24x7.
 - Security 
 	1) Implement secure data storage and transmission.
 	2) Protection against web malfunctions such as SQL injections, cross-site scripting.
 - Usability 
-	1) 
+	1) Provide user-friendly interface
+	2) Web-application accessibility on various devices.
+- Scalability
+	1) The system should be scalable to accommodate future growth.
