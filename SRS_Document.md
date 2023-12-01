@@ -2,7 +2,7 @@
 
 ## Title :
 
-	Recipe Sharing And Meal Planning
+	FlavourFeed / TastyFeed
 
 ## Client :
 
