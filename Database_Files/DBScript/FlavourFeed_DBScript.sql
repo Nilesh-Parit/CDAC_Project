@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS tbl_users (
     last_name VARCHAR(30),
     username VARCHAR(30) UNIQUE,
     email_id VARCHAR(30) UNIQUE,
-    pass_word VARCHAR(30),
+    pass_word VARCHAR(10),
     dob DATE,
     phone_number VARCHAR(15),
     allergies varchar(20),
@@ -33,10 +33,10 @@ CREATE TABLE IF NOT EXISTS user_recipe (
 -- DROP TABLE tbl_recipe;
 CREATE TABLE IF NOT EXISTS tbl_recipe (
 	recipe_id VARCHAR(10) PRIMARY KEY,
-    recipe_name VARCHAR(20),
-    recipe_type VARCHAR(20),
+    recipe_name VARCHAR(50),
+    recipe_type VARCHAR(30),
     cuisine VARCHAR(20),
-    recipe_procedure VARCHAR(600),
+    recipe_procedure VARCHAR(3000),
     time_required INT,
     upload_date DATETIME
 );
@@ -74,8 +74,8 @@ CREATE TABLE IF NOT EXISTS recipe_ingredients(
 -- DROP TABLE tbl_ingredients;
 CREATE TABLE IF NOT EXISTS tbl_ingredients (
 	ingredient_id VARCHAR(10) PRIMARY KEY,
-    ingredient_name VARCHAR(20),
-    ingredient_type VARCHAR(20),
+    ingredient_name VARCHAR(50),
+    ingredient_type VARCHAR(30),
     calorie_count INT
 );
 -- DESC tbl_ingredients;
@@ -95,8 +95,8 @@ CREATE TABLE IF NOT EXISTS user_meal (
 -- MEAL PLANNING TABLE
 -- DROP TABLE tbl_meal_planning;
 CREATE TABLE IF NOT EXISTS tbl_meal_planning(
-	meal_id VARCHAR(10) PRIMARY KEY,
-    meal_time VARCHAR(10),
+	meal_id VARCHAR(20) PRIMARY KEY,
+    meal_time VARCHAR(20),
     total_calories INT,
     quantity INT    
 );
