@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS user_meal (
 -- DROP TABLE tbl_meal_planning;
 CREATE TABLE IF NOT EXISTS tbl_meal_planning(
 	meal_id VARCHAR(10) PRIMARY KEY,
-    meal_time TIME,
+    meal_time VARCHAR(10),
     total_calories INT,
     quantity INT    
 );
