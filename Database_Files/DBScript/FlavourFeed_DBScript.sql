@@ -101,4 +101,42 @@ CREATE TABLE IF NOT EXISTS tbl_meal_planning(
     quantity INT    
 );
 -- DESC tbl_meal_planning;
-SHOW TABLES;
+-- SHOW TABLES:
+
+
+-- Connection B/W Comments Table, User Table and Recipe Table
+CREATE TABLE user_comments(
+	user_id VARCHAR(10),
+    recipe_id VARCHAR(10),
+    comment_id VARCHAR(10),
+    FOREIGN KEY (user_id) REFERENCES tbl_users(user_id),
+    FOREIGN KEY (recipe_id) REFERENCES tbl_recipe(recipe_id),
+    FOREIGN KEY (comment_id) REFERENCES tbl_comments(comment_id)
+);
+
+-- COMMENTS TABLE
+-- DROP TABLE tbl_comments;
+CREATE TABLE IF NOT EXISTS tbl_comments(
+	comment_id VARCHAR(10) PRIMARY KEY,
+    comments VARCHAR(30)
+); 
+-- DESC tbl_comments;
+-- SHOW TABLES;
+
+
+-- Connection B/W Feedback Table and User Table
+CREATE TABLE IF NOT EXISTS user_feedback(
+	feedback_id VARCHAR(10),
+    user_id VARCHAR(10),
+    FOREIGN KEY (user_id) REFERENCES tbl_users(user_id),
+    FOREIGN KEY (feedback_id) REFERENCES tbl_feedback(feedback_id)
+);
+
+-- FEEDBACK TABLE
+-- DROP TABLE tbl_feedback;
+CREATE TABLE IF NOT EXISTS tbl_feedback(
+	feedback_id VARCHAR(10) PRIMARY KEY,
+    feedback VARCHAR(50)
+);
+-- DESC tbl_feedback;
+-- SHOW TABLES;
