@@ -10,16 +10,3 @@ public class MySpringBootRestService {
 		SpringApplication.run(MySpringBootRestService.class, args);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-                                                                                    //ABHAY
