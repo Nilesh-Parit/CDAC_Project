@@ -37,13 +37,13 @@ public class FeedbackController {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
 	
-	@PostMapping("feedback/{fid}")
+	@PostMapping("/feedback")
 	public ResponseEntity<String> addNewFeedback(@RequestBody Feedback f){
 		fservice.addNewFeedback(f);
 		return ResponseEntity.ok("Feedback added successfully");
 	}
 	
-	@PutMapping("feedback/{fid}")
+	@PutMapping("/feedback/{fid}")
 	public ResponseEntity<String> updateFeedback(@RequestBody Feedback f){
 		fservice.updateFeedbackById(f);
 		return ResponseEntity.ok("Feedback updated successfully");	

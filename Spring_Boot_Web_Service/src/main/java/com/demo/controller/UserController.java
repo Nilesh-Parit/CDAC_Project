@@ -58,13 +58,13 @@ public class UserController {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
 	
-	@PostMapping("user/{userid}")
+	@PostMapping("/user")
 	public ResponseEntity<String> addNewUser(@RequestBody User u){
 		uservice.addNewUser(u);
 		return ResponseEntity.ok("User added successfully");
 	}
 	
-	@PutMapping("user/{userid}")
+	@PutMapping("/user/{userid}")
 	public ResponseEntity<String> updateUser(@RequestBody User u){
 		uservice.updateUserById(u);
 		return ResponseEntity.ok("User updated successfully");	

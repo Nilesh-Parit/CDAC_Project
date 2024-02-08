@@ -40,13 +40,13 @@ public class RecipeController {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
 	
-	@PostMapping("recipe/{Recipeid}")
+	@PostMapping("/recipe")
 	public ResponseEntity<String> addNewRecipe(@RequestBody Recipe r){
 		rservice.addNewRecipe(r);
 		return ResponseEntity.ok("Recipe added successfully");
 	}
 	
-	@PutMapping("recipe/{Recipeid}")
+	@PutMapping("/recipe/{Recipeid}")
 	public ResponseEntity<String> updateRecipe(@RequestBody Recipe r){
 		rservice.updateRecipeById(r);
 		return ResponseEntity.ok("Recipe updated successfully");	

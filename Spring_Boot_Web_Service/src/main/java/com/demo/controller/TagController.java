@@ -38,13 +38,13 @@ public class TagController {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
 	
-	@PostMapping("tag/{tagid}")
+	@PostMapping("/tag")
 	public ResponseEntity<String> addNewTag(@RequestBody Tag t){
 		tservice.addNewTag(t);
 		return ResponseEntity.ok("Tag added successfully");
 	}
 	
-	@PutMapping("tag/{tagid}")
+	@PutMapping("/tag/{tagid}")
 	public ResponseEntity<String> updateTag(@RequestBody Tag t){
 		tservice.updateTagById(t);
 		return ResponseEntity.ok("Tag updated successfully");	

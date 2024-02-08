@@ -6,7 +6,6 @@ import javax.validation.constraints.Size;
 import java.util.Arrays;
 import java.util.Set;   
 
-
 @Entity
 @Table(name = "tbl_users")
 public class User {

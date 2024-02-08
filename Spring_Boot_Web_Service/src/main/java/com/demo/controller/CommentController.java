@@ -36,13 +36,13 @@ public class CommentController {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
 	
-	@PostMapping("comment/{cid}")
+	@PostMapping("/comment")
 	public ResponseEntity<String> addNewComment(@RequestBody Comment c){
 		cservice.addNewComment(c);
 		return ResponseEntity.ok("Comment added successfully");
 	}
 	
-	@PutMapping("comment/{cid}")
+	@PutMapping("/comment/{cid}")
 	public ResponseEntity<String> updateComment(@RequestBody Comment c){
 		cservice.updateCommentById(c);
 		return ResponseEntity.ok("Comment updated successfully");

@@ -38,13 +38,13 @@ public class MealPlanningController {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
 	
-	@PostMapping("mealplanning/{mpid}")
+	@PostMapping("/mealplanning")
 	public ResponseEntity<String> addNewMealPlanning(@RequestBody MealPlanning m){
 		mservice.addNewMealPlanning(m);
 		return ResponseEntity.ok("MealPlanning added successfully");
 	}
 	
-	@PutMapping("mealplanning/{mpid}")
+	@PutMapping("/mealplanning/{mpid}")
 	public ResponseEntity<String> updateMealPlanning(@RequestBody MealPlanning m){
 		mservice.updateMealPlanningById(m);
 		return ResponseEntity.ok("MealPlanning updated successfully");	

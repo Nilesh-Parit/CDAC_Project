@@ -3,7 +3,6 @@ import java.util.Set;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
-
 @Entity
 @Table(name = "tbl_tag")
 public class Tag {

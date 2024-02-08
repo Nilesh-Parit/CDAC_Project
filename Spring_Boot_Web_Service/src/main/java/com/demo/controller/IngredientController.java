@@ -38,19 +38,19 @@ public class IngredientController {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
 	
-	@PostMapping("ingredient/{ingid}")
+	@PostMapping("/ingredient")
 	public ResponseEntity<String> addNewIngredient(@RequestBody Ingredient i){
 		iservice.addNewIngredient(i);
 		return ResponseEntity.ok("Ingredient added successfully");
 	}
 	
-	@PutMapping("ingredient/{ingid}")
+	@PutMapping("/ingredient/{ingid}")
 	public ResponseEntity<String> updateIngredient(@RequestBody Ingredient i){
 		iservice.updateIngredientById(i);
 		return ResponseEntity.ok("Ingredient updated successfully");	
 	}
 	
-	@DeleteMapping("/mealplanning/{ingid}")
+	@DeleteMapping("/ingredient/{ingid}")
 	public ResponseEntity<String> DeleteIngredient(@PathVariable int ingid){
 		iservice.deleteIngredientById(ingid);
 		return ResponseEntity.ok("Ingredient deleted successfully");
