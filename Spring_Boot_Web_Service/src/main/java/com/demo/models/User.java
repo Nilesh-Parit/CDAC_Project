@@ -13,9 +13,17 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     private Integer userId;
+	
+	@NotBlank(message = "Firstname is required")
+	@Column(name="first_name")
+	private String firstname;
+	
+	@NotBlank(message = "Lastname is required")
+	@Column(name="last_name")
+	private String lastname;
 
 	@NotBlank(message = "Username is required")
-    @Column(name = "username")
+    @Column(name = "username" ,unique=true)
     private String username;
 
 	@NotBlank(message = "Password is required")
@@ -23,13 +31,28 @@ public class User {
     @Column(name = "password")
     private String password;
     
+	@Email
 	@NotBlank(message = "Email is required")
-	@Email(message = "Invalid email format")
     @Column(name = "email_id")
     private String email;
 
     @Column(name = "role")
     private String role;
+    
+    @Column(name="address")
+    private String address;
+    
+    @Column(name="gender")
+    private String gender;
+    
+    @Column(name="phone_number")
+    private String phonenumber;
+    
+    @Column(name="preferences")
+    private String preferences;
+
+    @Column(name="allergies")
+    private String allergies;
     
     @Lob
     @Column(name = "user_image", nullable = true)
@@ -46,31 +69,58 @@ public class User {
     
     @OneToMany
     private Set<Comment> userComments;
-    
+       
     public User() {
 		super();
-	}
-
-    public User(Integer userId, String username, String password, String email, String role){
+	}	
+     
+    public User(Integer userId,@NotBlank(message = "Firstname is required")String firstname,@NotBlank(message = "Lastname is required")String lastname, @NotBlank(message = "Username is required") String username,
+			@NotBlank(message = "Password is required") @Size(min = 8, message = "Password must be at least 8 characters Long") String password,
+			@Email @NotBlank(message = "Email is required") String email, String role, String address, String gender,
+			String phonenumber,String preferences,String allergies, byte[] user_image,
+			Set<Recipe> userRecipes, Set<Feedback> userFeedbacks, MealPlanning m, Set<Comment> userComments) {
 		super();
+		this.firstname=firstname;
 		this.userId = userId;
 		this.username = username;
 		this.password = password;
 		this.email = email;
 		this.role = role;
+		this.address = address;
+		this.gender = gender;
+		this.phonenumber = phonenumber;
+		this.preferences = preferences;
+		this.allergies = allergies;
+		this.user_image = user_image;
+		this.userRecipes = userRecipes;
+		this.userFeedbacks = userFeedbacks;
+		this.m = m;
+		this.userComments = userComments;
 	}
     
-	public User(Integer userId, String username, String password, String email, String role, byte[] user_image) {
+	public User(Integer userId, @NotBlank(message = "Username is required") String username,
+			@NotBlank(message = "Password is required") @Size(min = 8, message = "Password must be at least 8 characters Long") String password,
+			@Email @NotBlank(message = "Email is required") String email, String role, String address, String gender,
+			String phonenumber,String preferences,String allergies, Set<Recipe> userRecipes,
+			Set<Feedback> userFeedbacks, MealPlanning m, Set<Comment> userComments) {
 		super();
 		this.userId = userId;
 		this.username = username;
 		this.password = password;
 		this.email = email;
 		this.role = role;
-		this.user_image = user_image;
+		this.address = address;
+		this.gender = gender;
+		this.phonenumber = phonenumber;
+		this.preferences = preferences;
+		this.allergies = allergies;
+		this.userRecipes = userRecipes;
+		this.userFeedbacks = userFeedbacks;
+		this.m = m;
+		this.userComments = userComments;
 	}
 
-    public byte[] getImages() {
+	public byte[] getImages() {
         return user_image;
     }
 
@@ -118,7 +168,6 @@ public class User {
 		this.role = role;
 	}
 
-	
 	public Set<Recipe> getUserRecipes() {
 		return userRecipes;
 	}
@@ -142,10 +191,79 @@ public class User {
 	public void setUserComments(Set<Comment> userComments) {
 		this.userComments = userComments;
 	}
+	
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getPreferences() {
+		return preferences;
+	}
+
+	public void setPreferences(String preferences) {
+		this.preferences = preferences;
+	}
+
+	public String getAllergies() {
+		return allergies;
+	}
+
+	public void setAllergies(String allergies) {
+		this.allergies = allergies;
+	}
+
+	public MealPlanning getM() {
+		return m;
+	}
+
+	public void setM(MealPlanning m) {
+		this.m = m;
+	}
+	
+	public String getPhonenumber() {
+		return phonenumber;
+	}
+
+	public void setPhonenumber(String phonenumber) {
+		this.phonenumber = phonenumber;
+	}
+	
+	public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
 
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", username=" + username + ", password=" + password + ", email=" + email
-				+ ", role=" + role + ", user_image=" + Arrays.toString(user_image) + "]";
+		return "User [userId=" + userId + ", firstname=" + firstname + ", lastname=" + lastname + ", username="
+				+ username + ", password=" + password + ", email=" + email + ", role=" + role + ", address=" + address
+				+ ", gender=" + gender + ", phonenumber=" + phonenumber + ", preferences=" + preferences
+				+ ", allergies=" + allergies + ", user_image=" + Arrays.toString(user_image) + ", userRecipes="
+				+ userRecipes + ", userFeedbacks=" + userFeedbacks + ", m=" + m + ", userComments=" + userComments
+				+ "]";
 	}
+
 }

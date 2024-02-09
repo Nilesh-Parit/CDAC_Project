@@ -52,14 +52,12 @@ public class RecipeServiceImpl implements RecipeService {
 
 	@Override
 	public Boolean addNewRecipe(Recipe r) {
-		if (rdao.existsById(r.getRecipeId())) {
+		try {
+	        rdao.save(r);
+	        return true;
+	    } catch (Exception e){
 	        return false;
-	     }
-		Recipe r1=rdao.save(r);
-		if(r1!=null) {
-			return true;
-		 }
-	 return false;
+	    }
 	}
 
 	@Override

@@ -44,14 +44,12 @@ public class TagServiceImpl implements TagService {
 
 	@Override
 	public Boolean addNewTag(Tag t) {
-		if (tdao.existsById(t.getTagId())) {
+		try {
+	        tdao.save(t);
+	        return true;
+	    } catch (Exception e){
 	        return false;
 	    }
-		Tag t1=tdao.save(t);
-		if(t1!=null) {
-		 return true;
-	}
-		return false;
 	}
 
 	@Override

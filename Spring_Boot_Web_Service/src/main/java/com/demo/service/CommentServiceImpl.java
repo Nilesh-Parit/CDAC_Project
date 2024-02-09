@@ -21,14 +21,12 @@ public class CommentServiceImpl implements CommentService {
 
 	@Override
 	public Boolean addNewComment(Comment c) {
-		if (cdao.existsById(c.getCommentId())) {
+		try {
+	        cdao.save(c);
+	        return true;
+	    } catch (Exception e){
 	        return false;
 	    }
-		Comment c1=cdao.save(c);
-	    if(c1!=null){
-	    	return true;
-	    }
-	    return false;
 	}
 
 	@Override

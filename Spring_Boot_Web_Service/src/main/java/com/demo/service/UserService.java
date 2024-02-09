@@ -24,10 +24,14 @@ public interface UserService {
 
 	Set<Comment> getUserComments(int userId);
 
-	boolean updatePassword(int userId, String newPassword);
+	boolean updatePassword(String username, String newPassword);
 
 	boolean login(String username, String password);
 
 	boolean deleteUserByUsernameAndPassword(String username, String password);
+
+	String[] getUserAllergies(int userId);
+
+	String[] getUserPreferences(int userId);
 
 }

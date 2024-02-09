@@ -11,7 +11,7 @@ public class Tag {
     @Column(name = "tag_id")
     private Integer tagId;
 	
-	@NotBlank(message = "Tag name is required")
+	@NotBlank(message = "Tag name cannot be Blank")
     @Column(name = "tag_name")
     private String tagName;
     
