@@ -33,7 +33,7 @@ export default function login() {
             <div className="modal-body">
               <form>
                 <div className="form-outline mb-4 w-50">
-                <label
+                  <label
                     className="form-label"
                     for="form2Example1"
                     style={{ fontSize: "14px", marginLeft: "50%" }}
@@ -54,7 +54,7 @@ export default function login() {
                   />
                 </div>
                 <div className="form-outline mb-4 w-50 ">
-                <label
+                  <label
                     className="form-label"
                     for="password"
                     style={{
@@ -76,7 +76,6 @@ export default function login() {
                       borderRadius: "15px",
                     }}
                   />
-                  
                 </div>
 
                 <div className="row mb-4" style={{ marginLeft: "7%" }}>
@@ -99,10 +98,9 @@ export default function login() {
                         style={{ width: "1.8em;", height: "1em" }}
                       />
                     </div>
-                  </div>
-
-                  <div className="col" style={{ fontSize: "14px" }}>
-                    <a href="#!">Forgot password?</a>
+                    <div className="col" style={{ fontSize: "14px" }}>
+                      <a href="#!">Forgot password?</a>
+                    </div>
                   </div>
                 </div>
 

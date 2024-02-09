@@ -6,7 +6,7 @@
   width: 100%;
   padding: 0 6rem;
   z-index: 100;
-  color:rgb(97, 95, 95);
+  color: rgb(97, 95, 95);
 }
 
 .nav.sticky {
@@ -28,7 +28,7 @@
 .nav__item {
   margin-left: 2rem;
 }
-.btn{
+.btn {
   font-size: 1rem;
 }
 .nav__link:link,

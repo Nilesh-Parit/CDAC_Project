@@ -1,3 +1,12 @@
+body {
+  background-image: url("D:\anura\study\GitHub\CDAC_Project\ff_frontend\public\Images\bg.jpg");
+  background-size: cover;
+  z-index: -999;
+}
+
+body image {
+  width: 100%;
+}
 .App {
   text-align: center;
 }
@@ -21,7 +30,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  /* color: white; */
 }
 
 .App-link {

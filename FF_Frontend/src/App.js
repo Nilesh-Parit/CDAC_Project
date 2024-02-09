@@ -1,7 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import './App.css';
-import Navbar from './pages/navbar';
+import "./App.css";
+import Navbar from "./components/navbar";
+import Footer from "./components/footer";
 import Registration from "./pages/registration";
+import Menu from "./pages/menu";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
             element={
               <div>
                 <Navbar />
+                <Menu />
+                <Footer />
               </div>
             }
           />
@@ -22,6 +26,7 @@ function App() {
               <>
                 <Navbar />
                 <Registration />
+                <Footer />
               </>
             }
           />
