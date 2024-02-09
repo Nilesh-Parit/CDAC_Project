@@ -31,9 +31,9 @@ public class UserController {
 		return ResponseEntity.ok(ulist);
 	}
 	
-	@PutMapping("/user/{userId}/updatepassword")
-	public ResponseEntity<String> updatePassword(@PathVariable int userId, @RequestBody String newPassword) {
-	    boolean passwordUpdated = uservice.updatePassword(userId, newPassword);
+	@PutMapping("/user/{username}/updatepassword")
+	public ResponseEntity<String> updatePassword(@PathVariable String username, @RequestBody String newPassword) {
+	    boolean passwordUpdated = uservice.updatePassword(username, newPassword);
 	    if (passwordUpdated)
 	        return ResponseEntity.ok("Password updated successfully");
 	    else
@@ -42,6 +42,7 @@ public class UserController {
 
 	@PostMapping("/login")
 	public ResponseEntity<String> login(@RequestBody User user) {
+		System.out.println("In Login");
 	    boolean loggedIn = uservice.login(user.getUsername(), user.getPassword());
 	    if (loggedIn)
 	        return ResponseEntity.ok("Login successful");
@@ -111,4 +112,22 @@ public class UserController {
 	    else
 	        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
+	
+	@GetMapping("/user/{userId}/allergies")
+    public ResponseEntity<String[]> getUserAllergies(@PathVariable int userId) {
+        String[] allergies = uservice.getUserAllergies(userId);
+        if (allergies != null)
+            return ResponseEntity.ok(allergies);
+        else
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
+
+    @GetMapping("/user/{userId}/preferences")
+    public ResponseEntity<String[]> getUserPreferences(@PathVariable int userId) {
+        String[] preferences = uservice.getUserPreferences(userId);
+        if (preferences != null)
+            return ResponseEntity.ok(preferences);
+        else
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
 }                                                                                     

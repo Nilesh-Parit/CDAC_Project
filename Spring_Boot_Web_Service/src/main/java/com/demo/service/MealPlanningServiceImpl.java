@@ -22,15 +22,13 @@ public class MealPlanningServiceImpl implements MealPlanningService {
 
 	@Override
 	public Boolean addNewMealPlanning(MealPlanning mp) {
-			if (mdao.existsById(mp.getMealId())) {
-			    return false;
-			}
-			MealPlanning mp1=mdao.save(mp);
-			if(mp1!=null) {
-				return true;
-			}
-			return false;
-		}
+		try {
+	        mdao.save(mp);
+	        return true;
+	    } catch (Exception e){
+	        return false;
+	    }
+	}
 
 	@Override
 	public MealPlanning getMealPlanningById(int mid) {

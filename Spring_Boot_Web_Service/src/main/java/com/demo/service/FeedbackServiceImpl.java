@@ -22,15 +22,13 @@ public class FeedbackServiceImpl implements FeedbackService {
 
 	@Override
 	public Boolean addNewFeedback(Feedback f) {
-			if (fdao.existsById(f.getFeedbackId())) {
-			    return false;
-			}
-			Feedback f1=fdao.save(f);
-			if(f1!=null) {
-				return true;
-			}
-			return false;
-		}
+		try {
+	        fdao.save(f);
+	        return true;
+	    } catch (Exception e){
+	        return false;
+	    }
+	}
 
 	@Override
 	public Feedback getFeedbackById(String fid) {

@@ -23,15 +23,13 @@ public class IngredientServiceImpl implements IngredientService {
 
 	@Override
 	public Boolean addNewIngredient(Ingredient i) {
-			if (idao.existsById(i.getIngredientId())) {
-			    return false;
-			}
-			Ingredient i1=idao.save(i);
-			if(i1!=null) {
-				return true;
-			}
-			return false;
-		}
+		try {
+	        idao.save(i);
+	        return true;
+	    } catch (Exception e){
+	        return false;
+	    }
+	}
 
 	@Override
 	public Ingredient getIngredientById(int ingid) {

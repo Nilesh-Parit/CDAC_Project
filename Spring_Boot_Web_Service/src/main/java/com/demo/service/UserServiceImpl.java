@@ -20,13 +20,14 @@ public class UserServiceImpl implements UserService{
 		return udao.findAll();
 	}
 	
-	public boolean updatePassword(int userId, String newPassword) {
-	    User user = udao.findById(userId).orElse(null);
+	public boolean updatePassword(String username, String newPassword) {
+	    User user = udao.findByUsername(username);
 	    if (user != null) {
 	        user.setPassword(newPassword);
 	        udao.save(user);
 	        return true;
 	    } else {
+	    	System.out.println("In false");
 	        return false;
 	    }
 	}
@@ -51,7 +52,6 @@ public class UserServiceImpl implements UserService{
 	    }
 	}
 
-
 	@Override
 	public Boolean deleteUserById(int uid) {
 		if (udao.existsById(uid)) {
@@ -63,33 +63,38 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public Boolean updateUserById(User u) {
-		Optional<User> op=udao.findById(u.getUserId());
-		if(op.isPresent()) {
-			User u1=op.get();
-			u1.setUsername(u.getUsername());
+	    Optional<User> op = udao.findById(u.getUserId());
+	    if (op.isPresent()) {
+	        User u1 = op.get();
+	        u1.setFirstname(u.getFirstname());
+	        u1.setLastname(u.getLastname());
+	        u1.setUsername(u.getUsername());
 	        u1.setPassword(u.getPassword());
 	        u1.setEmail(u.getEmail());
 	        u1.setRole(u.getRole());
+	        u1.setAddress(u.getAddress()); 
+	        u1.setGender(u.getGender()); 
+	        u1.setPreferences(u.getPreferences()); 
+	        u1.setAllergies(u.getAllergies()); 
 	        u1.setUserRecipes(u.getUserRecipes());
 	        u1.setUserFeedbacks(u.getUserFeedbacks());
 	        u1.setUserComments(u.getUserComments());
-			if(udao.save(u1)!=null) {
-				return true;
-			};
-		}
-		return false;
+	        if (udao.save(u1) != null) {
+	            return true;
+	        }
+	    }
+	    return false;
 	}
-
+	
 	@Override
-	public Boolean addNewUser(User u) {       //Register User
-		if (udao.existsById(u.getUserId())) {
-		    return false;
-		}
-		User u1=udao.save(u);
-		if(u1!=null) {
-			return true;
-		}
-		return false;
+	public Boolean addNewUser(User u) {
+	    try {
+	    	u.setRole("user");
+	        udao.save(u);
+	        return true;
+	    } catch (Exception e){
+	        return false;
+	    }
 	}
 
 	@Override
@@ -129,5 +134,27 @@ public class UserServiceImpl implements UserService{
 	    } else {
 	        return null;
 	    }
+	}
+
+	@Override
+	public String[] getUserAllergies(int userId) {
+	    User user = udao.findById(userId).orElse(null);
+	    if (user != null && user.getAllergies() != null) {
+	        String allergiesString = user.getAllergies();
+	        String[] allergiesArray = allergiesString.split(",");
+	        return allergiesArray;
+	    }
+	    return null;
+	}
+	
+	@Override
+	public String[] getUserPreferences(int userId) {
+	    User user = udao.findById(userId).orElse(null);
+	    if (user != null && user.getPreferences() != null) {
+	        String preferencesString = String.valueOf(user.getPreferences());
+	        String[] preferencesArray = preferencesString.split(",");
+	        return preferencesArray;
+	    }
+	    return null;
 	}
 }
