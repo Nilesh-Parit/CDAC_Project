@@ -35,6 +35,9 @@ public class User {
 	@NotBlank(message = "Email is required")
     @Column(name = "email_id")
     private String email;
+	
+	@Column(name="date_of_birth")
+	private String dateofbirth;
 
     @Column(name = "role")
     private String role;
@@ -74,17 +77,48 @@ public class User {
 		super();
 	}	
      
-    public User(Integer userId,@NotBlank(message = "Firstname is required")String firstname,@NotBlank(message = "Lastname is required")String lastname, @NotBlank(message = "Username is required") String username,
+	public User(Integer userId, @NotBlank(message = "Firstname is required") String firstname,
+			@NotBlank(message = "Lastname is required") String lastname,
+			@NotBlank(message = "Username is required") String username,
 			@NotBlank(message = "Password is required") @Size(min = 8, message = "Password must be at least 8 characters Long") String password,
-			@Email @NotBlank(message = "Email is required") String email, String role, String address, String gender,
-			String phonenumber,String preferences,String allergies, byte[] user_image,
+			@Email @NotBlank(message = "Email is required") String email, String dateofbirth, String role,
+			String address, String gender, String phonenumber, String preferences, String allergies,
 			Set<Recipe> userRecipes, Set<Feedback> userFeedbacks, MealPlanning m, Set<Comment> userComments) {
 		super();
-		this.firstname=firstname;
 		this.userId = userId;
+		this.firstname = firstname;
+		this.lastname = lastname;
 		this.username = username;
 		this.password = password;
 		this.email = email;
+		this.dateofbirth = dateofbirth;
+		this.role = role;
+		this.address = address;
+		this.gender = gender;
+		this.phonenumber = phonenumber;
+		this.preferences = preferences;
+		this.allergies = allergies;
+		this.userRecipes = userRecipes;
+		this.userFeedbacks = userFeedbacks;
+		this.m = m;
+		this.userComments = userComments;
+	}
+	
+	public User(Integer userId, @NotBlank(message = "Firstname is required") String firstname,
+			@NotBlank(message = "Lastname is required") String lastname,
+			@NotBlank(message = "Username is required") String username,
+			@NotBlank(message = "Password is required") @Size(min = 8, message = "Password must be at least 8 characters Long") String password,
+			@Email @NotBlank(message = "Email is required") String email, String dateofbirth, String role,
+			String address, String gender, String phonenumber, String preferences, String allergies, byte[] user_image,
+			Set<Recipe> userRecipes, Set<Feedback> userFeedbacks, MealPlanning m, Set<Comment> userComments) {
+		super();
+		this.userId = userId;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.username = username;
+		this.password = password;
+		this.email = email;
+		this.dateofbirth = dateofbirth;
 		this.role = role;
 		this.address = address;
 		this.gender = gender;
@@ -92,28 +126,6 @@ public class User {
 		this.preferences = preferences;
 		this.allergies = allergies;
 		this.user_image = user_image;
-		this.userRecipes = userRecipes;
-		this.userFeedbacks = userFeedbacks;
-		this.m = m;
-		this.userComments = userComments;
-	}
-    
-	public User(Integer userId, @NotBlank(message = "Username is required") String username,
-			@NotBlank(message = "Password is required") @Size(min = 8, message = "Password must be at least 8 characters Long") String password,
-			@Email @NotBlank(message = "Email is required") String email, String role, String address, String gender,
-			String phonenumber,String preferences,String allergies, Set<Recipe> userRecipes,
-			Set<Feedback> userFeedbacks, MealPlanning m, Set<Comment> userComments) {
-		super();
-		this.userId = userId;
-		this.username = username;
-		this.password = password;
-		this.email = email;
-		this.role = role;
-		this.address = address;
-		this.gender = gender;
-		this.phonenumber = phonenumber;
-		this.preferences = preferences;
-		this.allergies = allergies;
 		this.userRecipes = userRecipes;
 		this.userFeedbacks = userFeedbacks;
 		this.m = m;
@@ -255,15 +267,22 @@ public class User {
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
+	
+	public String getDateofbirth() {
+		return dateofbirth;
+	}
+
+	public void setDateofbirth(String dateofbirth) {
+		this.dateofbirth = dateofbirth;
+	}
 
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", firstname=" + firstname + ", lastname=" + lastname + ", username="
-				+ username + ", password=" + password + ", email=" + email + ", role=" + role + ", address=" + address
-				+ ", gender=" + gender + ", phonenumber=" + phonenumber + ", preferences=" + preferences
-				+ ", allergies=" + allergies + ", user_image=" + Arrays.toString(user_image) + ", userRecipes="
-				+ userRecipes + ", userFeedbacks=" + userFeedbacks + ", m=" + m + ", userComments=" + userComments
-				+ "]";
+				+ username + ", password=" + password + ", email=" + email + ", dateofbirth=" + dateofbirth + ", role="
+				+ role + ", address=" + address + ", gender=" + gender + ", phonenumber=" + phonenumber
+				+ ", preferences=" + preferences + ", allergies=" + allergies + ", user_image="
+				+ Arrays.toString(user_image) + ", userRecipes=" + userRecipes + ", userFeedbacks=" + userFeedbacks
+				+ ", m=" + m + ", userComments=" + userComments + "]";
 	}
-
 }
