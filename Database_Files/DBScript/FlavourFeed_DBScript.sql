@@ -6,7 +6,7 @@ USE flavour_feed;
 -- USER TABLE
 -- DROP TABLE tbl_users;
 CREATE TABLE IF NOT EXISTS tbl_users (
-    user_id VARCHAR(10) PRIMARY KEY,
+    user_id VARCHAR(10) PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(30),
     last_name VARCHAR(30),
     username VARCHAR(30) UNIQUE,
