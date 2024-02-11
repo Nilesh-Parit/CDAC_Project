@@ -21,11 +21,11 @@ CREATE TABLE IF NOT EXISTS tbl_users (
 -- RECIPE TABLE
 -- DROP TABLE tbl_recipe;
 CREATE TABLE IF NOT EXISTS tbl_recipe (
-	recipe_id VARCHAR(10) PRIMARY KEY,
+	recipe_id INT PRIMARY KEY AUTO_INCREMENT,
     recipe_name VARCHAR(50),
     recipe_type VARCHAR(30),
     cuisine VARCHAR(20),
-    recipe_procedure VARCHAR(3000),
+    recipe_procedure VARCHAR(4000),
     time_required INT,
     upload_date DATETIME
 );
