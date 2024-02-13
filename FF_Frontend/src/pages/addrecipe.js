@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/addrecipe.css";
 export default function AddRecipe() {
   return (
     <>
@@ -16,17 +17,17 @@ export default function AddRecipe() {
           />
         </a>
       </nav> */}
-      <div id="logodiv">
+      {/* <div id="logodiv">
         <img
           src="/images/logo.png"
           alt="Logo"
           className="nav__logo"
           id="logo"
         />
-      </div>
+      </div> */}
 
-      <div className="card ">
-        <div className="card-body" style={{ marginTop: "2%" }}>
+      <div className="card " id="card">
+        <div className="card-body" id="card-body" style={{ marginTop: "2%" }}>
           <h2 className="text-center" id="signUpheader">
             <b style={{ fontSize: "80%" }}>Add Recipe</b>
           </h2>
@@ -143,6 +144,10 @@ export default function AddRecipe() {
           </form>
         </div>
       </div>
+      <br />
+      <br />
+      <br />
+      <br />
     </>
   );
 }

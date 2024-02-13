@@ -22,13 +22,13 @@ export default function Allrecipes() {
   };
   return (
     <>
-      <nav
+      {/* <nav
         className="navbar  fixed-top "
         id="navbar--id"
         style={{ background: "rgb(240, 240, 240)" }}
       >
         <h2 className="navbar-heading">Recipes</h2>
-      </nav>
+      </nav> */}
       <div className="container" id="recipe-container">
         <div className="left ">
           <h2 className="vacc-by-age">All Recipes</h2>

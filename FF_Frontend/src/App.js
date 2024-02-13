@@ -7,7 +7,7 @@ import Footer from "./component/Footer";
 import NavbarReg from "./pages/navbarForReg";
 import Allrecipes from "./pages/allrecipes";
 import AddRecipe from "./pages/addrecipe";
-import AllRecipes from "./pages/allrecipes";
+import RecipeByName from "./pages/recipebyname";
 
 function App() {
   return (
@@ -20,12 +20,11 @@ function App() {
               <div>
                 <Navbar />
                 <Home />
-                <Footer />
               </div>
             }
           />
           <Route
-            path="/registration.js"
+            path="/registration"
             element={
               <>
                 <NavbarReg />
@@ -33,10 +32,35 @@ function App() {
               </>
             }
           />
-          <Route path="/allrecipes.js" element={<Allrecipes />}></Route>
-          <Route path="/addrecipe.js" element={<AddRecipe />}></Route>
-          <Route path="/allrecipes.js" element={<AllRecipes />}></Route>
+          <Route
+            path="/allrecipes"
+            element={
+              <>
+                <NavbarReg />
+                <Allrecipes />
+              </>
+            }
+          ></Route>
+          <Route
+            path="/addrecipe"
+            element={
+              <>
+                <NavbarReg />
+                <AddRecipe />
+              </>
+            }
+          ></Route>
+          <Route
+            path="/recipebyname"
+            element={
+              <>
+                <NavbarReg />
+                <RecipeByName />
+              </>
+            }
+          ></Route>
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );
