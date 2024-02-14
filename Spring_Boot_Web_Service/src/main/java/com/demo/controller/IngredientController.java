@@ -58,6 +58,18 @@ public class IngredientController {
 	    	return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
 	
+	@GetMapping("/distinctingredients")
+    public ResponseEntity<?> getAllDistinctIngredients() {
+        try {
+        	System.out.println("in Ingredient try");
+            List<Ingredient> distinctIngredients = iservice.getAllDistinctIngredients();
+            return new ResponseEntity<>(distinctIngredients, HttpStatus.OK);
+        } catch (Exception e) {
+        	System.out.println("in Ingredient catch");
+            return new ResponseEntity<>("Failed to retrieve distinct ingredients", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+	
 	@DeleteMapping("/ingredient/{ingid}")
 	public ResponseEntity<String> DeleteIngredient(@PathVariable int ingid){
 		Boolean status=iservice.deleteIngredientById(ingid);

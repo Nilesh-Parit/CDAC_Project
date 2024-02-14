@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 //import com.fasterxml.jackson.annotation.JsonInclude;
 //import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
  
 
@@ -289,6 +290,13 @@ public class User {
 
 	public void setDateOfBirth(String DateOfBirth) {
 		this.DateOfBirth = DateOfBirth;
+	}
+
+	public Object getImageBase64() {
+		if (this.user_image != null) {
+            return Base64.getEncoder().encodeToString(this.user_image);
+        }
+        return null;
 	}
 
 //	@Override

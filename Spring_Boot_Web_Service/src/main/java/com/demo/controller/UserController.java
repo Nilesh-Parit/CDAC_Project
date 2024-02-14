@@ -1,4 +1,5 @@
 package com.demo.controller;
+import java.io.IOException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,7 +11,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+
 import com.demo.models.Comment;
 import com.demo.models.Feedback;
 import com.demo.models.Recipe;
@@ -51,31 +55,109 @@ public class UserController {
 	@GetMapping("/user/{userid}")
 	public ResponseEntity<User> getById(@PathVariable int userid){
 		User u=uservice.getUserById(userid);
+		System.out.println(u.getImages());
 		if (u!=null)
 			return ResponseEntity.ok(u);
 		else
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
 	
-	@PostMapping("/user")
-	public ResponseEntity<String> addNewUser(@RequestBody User u){
-		Boolean status=uservice.addNewUser(u);
-		System.out.println(u.getDateOfBirth());
-		System.out.println("abhay");
-		if(status)
-			return ResponseEntity.ok("User added successfully");
-		else
-			return ResponseEntity.badRequest().body("User insertion unsuccessful: User ID or username already exists");
-	}
+//	@PostMapping("/user")
+//	public ResponseEntity<String> addNewUser(@RequestBody User u){
+//		Boolean status=uservice.addNewUser(u);
+//		System.out.println(u.getDateOfBirth());
+//		System.out.println("abhay");
+//		if(status)
+//			return ResponseEntity.ok("User added successfully");
+//		else
+//			return ResponseEntity.badRequest().body("User insertion unsuccessful: User ID or username already exists");
+//	}
 	
-	@PutMapping("/user/{userid}")
-	public ResponseEntity<String> updateUser(@RequestBody User u){
-		Boolean status=uservice.updateUserById(u);
-		if(status)
-			return ResponseEntity.ok("User Updated successfully");
-		else
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-	}
+	@PostMapping("/user")
+    public ResponseEntity<String> addNewUser(@RequestParam("image") MultipartFile image,
+                                             @RequestParam("firstname") String firstname,
+                                             @RequestParam("lastname") String lastname,
+                                             @RequestParam("username") String username,
+                                             @RequestParam("password") String password,
+                                             @RequestParam("email") String email,
+                                             @RequestParam("phonenumber") String phonenumber,
+                                             @RequestParam("gender") String gender,
+                                             @RequestParam("address") String address,
+                                             @RequestParam("preferences") String preferences,
+                                             @RequestParam("allergies") String allergies,
+                                             @RequestParam("dateOfBirth") String dateOfBirth) {
+        try {
+            byte[] imageBytes = image.getBytes();
+            
+            User user = new User();
+            user.setFirstname(firstname);
+            user.setLastname(lastname);
+            user.setUsername(username);
+            user.setPassword(password);
+            user.setEmail(email);
+            user.setPhonenumber(phonenumber);
+            user.setGender(gender);
+            user.setAddress(address);
+            user.setPreferences(preferences);
+            user.setAllergies(allergies);
+            user.setDateOfBirth(dateOfBirth);
+            user.setImages(imageBytes); // Set image byte array
+            
+            uservice.addNewUser(user);
+            
+            return ResponseEntity.ok("User added successfully");
+        } catch (IOException e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to upload image");
+        }
+    }
+	
+//	@PutMapping("/user/{userid}")
+//	public ResponseEntity<String> updateUser(@RequestBody User u){
+//		Boolean status=uservice.updateUserById(u);
+//		if(status)
+//			return ResponseEntity.ok("User Updated successfully");
+//		else
+//			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+//	}
+	
+    @PutMapping("/user/{userId}")
+    public ResponseEntity<?> updateProfile(@PathVariable Integer userId, @RequestParam("profileImage") MultipartFile profileImage,
+                                           @RequestParam("firstname") String firstname, @RequestParam("lastname") String lastname,
+                                           @RequestParam("username") String username, @RequestParam("password") String password,
+                                           @RequestParam("email") String email, @RequestParam("dateOfBirth") String dateOfBirth,
+                                           @RequestParam("address") String address, @RequestParam("gender") String gender,
+                                           @RequestParam("phonenumber") String phonenumber, @RequestParam("preferences") String preferences,
+                                           @RequestParam("allergies") String allergies) {
+        try {
+            User user = uservice.getUserById(userId);
+
+            if (user == null) {
+                return new ResponseEntity<>("User not found", HttpStatus.NOT_FOUND);
+            }
+
+            byte[] imageBytes = profileImage.getBytes();
+
+            user.setFirstname(firstname);
+            user.setLastname(lastname);
+            user.setUsername(username);
+            user.setPassword(password);
+            user.setEmail(email);
+            user.setDateOfBirth(dateOfBirth);
+            user.setAddress(address);
+            user.setGender(gender);
+            user.setPhonenumber(phonenumber);
+            user.setPreferences(preferences);
+            user.setAllergies(allergies);
+            user.setImages(imageBytes);
+
+            uservice.addNewUser(user);
+
+            return new ResponseEntity<>("Profile updated successfully", HttpStatus.OK);
+        } catch (IOException e) {
+            return new ResponseEntity<>("Error updating profile", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 	
 	@DeleteMapping("/user/{userid}")
 	public ResponseEntity<String> DeleteUser(@PathVariable int userid){
