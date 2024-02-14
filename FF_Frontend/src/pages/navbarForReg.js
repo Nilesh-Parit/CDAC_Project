@@ -29,7 +29,7 @@ export default function NavbarReg() {
           </li>
           <li className="nav__item">
             {/* event listner to open modal */}
-            <button
+            {/* <button
               data-toggle="modal"
               data-target="#modalopen"
               id="login__btn"
@@ -38,7 +38,7 @@ export default function NavbarReg() {
               onClick={modalHandler}
             >
               Click to login
-            </button>
+            </button> */}
           </li>
         </ul>
       </nav>

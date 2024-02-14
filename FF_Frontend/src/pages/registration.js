@@ -1,27 +1,24 @@
 import React from "react";
 import "../styles/registration.css";
+import axios from "axios";
 
 export default function Registration() {
   //COUNTRY
-  document.addEventListener("DOMContentLoaded", function () {
-    // Fetch countries data from the API
-    fetch("https://restcountries.com/v3.1/all")
-      .then((response) => response.json())
-      .then((data) => {
-        // Get the select element
-        const countryDropdown = document.getElementById("countryDropdown");
-
-        // Loop through the countries and add options to the dropdown
-        data.forEach((country) => {
-          const option = document.createElement("option");
-          option.value = country.name.common;
-          option.text = country.name.common;
-          countryDropdown.appendChild(option);
-        });
-      })
-      .catch((error) => console.error("Error fetching countries:", error));
-  });
-
+  function country() {
+    const count = axios.get(`https://restcountries.com/v3.1/all`);
+    count.then((res) => {
+      // console.log(res.data[0].name.common);
+      const countryDropdown = document.getElementById("countryDropdown");
+      //   console.log(info);
+      res.data.forEach((res, i) => {
+        const option = document.createElement("option");
+        // console.log(res.name.common);
+        option.value = res.name.commonn;
+        option.text = res.name.common;
+        countryDropdown.appendChild(option);
+      });
+    });
+  }
   return (
     <>
       <h1
@@ -32,7 +29,7 @@ export default function Registration() {
         FlavourFeed
       </h1>
       <div className="card ">
-        <div className="card-body" style={{ marginTop: "2%" }}>
+        <div className="card-body" id="card-body" style={{ marginTop: "2%" }}>
           <h2 className="text-center" id="signUpheader">
             <b style={{ fontSize: "80%" }}>Register Yourself</b>
           </h2>
@@ -102,7 +99,11 @@ export default function Registration() {
                     placeholder="Enter your allergies"
                   />
                   <label for="countryDropdown">Country</label>
-                  <select className="form-select" id="countryDropdown">
+                  <select
+                    className="form-select"
+                    id="countryDropdown"
+                    onClick={country}
+                  >
                     <option selected>Enter your country</option>
                   </select>
                 </div>
@@ -118,6 +119,10 @@ export default function Registration() {
           </form>
         </div>
       </div>
+      <br />
+      <br />
+      <br />
+      <br />
     </>
   );
 }

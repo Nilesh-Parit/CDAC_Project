@@ -3,7 +3,7 @@ import AppDropDownBtn from "./child/appointmentDropdownBtn";
 export default function AllRecipes() {
   return (
     <>
-      <nav
+      {/* <nav
         className="navbar navbar-expand-lg navbar-light fixed-top "
         id="navbar--id"
         style={{ background: "rgb(240, 240, 240)" }}
@@ -16,7 +16,7 @@ export default function AllRecipes() {
             id="logo"
           />
         </a>
-      </nav>
+      </nav> */}
       <div id="dashboard-card" className="card">
         <div className="card-header">Recipes</div>
         <div className="card-body">

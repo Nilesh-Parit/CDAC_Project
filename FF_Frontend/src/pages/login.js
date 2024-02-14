@@ -111,7 +111,7 @@ export default function login() {
 
                 <div className="text-center" style={{ fontSize: "14px" }}>
                   <p>
-                    Not a member? <a href="/registration.js">Register</a>
+                    Not a member? <a href="/registration">Register</a>
                   </p>
                 </div>
               </form>

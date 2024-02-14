@@ -1,5 +1,5 @@
 import "../styles/home.css";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <header className="header">
-        <div className="header__title">
+        <div className="header__title" id="parallax">
           <h1>
             To live a {/* <!-- Green highlight effect --> */}&nbsp;
             <span className="highlight">full life, </span>
@@ -17,7 +17,6 @@ export default function Home() {
             <span className="highlight">your stomach</span>
             &nbsp;first.
           </h1>
-
           <img
             src="images/cooking-at-home.gif"
             className="header__img"
@@ -106,13 +105,13 @@ export default function Home() {
               cooking by transforming basic ingredients into culinary marvels.
             </p>
             <h5>
-              <a
-                href="/allrecipes.js"
+              <Link
+                to="/allrecipes"
                 // className="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
                 id="clickhere"
               >
                 <b>More recipes on your way→</b>
-              </a>
+              </Link>
             </h5>
           </div>
         </div>
@@ -134,7 +133,7 @@ export default function Home() {
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseOne"
-                aria-expanded="true"
+                // aria-expanded="false"
                 aria-controls="collapseOne"
               >
                 <h5 className="text-center">
@@ -260,7 +259,7 @@ export default function Home() {
           id="btn-regt"
           className="btn  rounded-pill"
           onClick={() => {
-            navigate("/registration.js");
+            navigate("/registration");
           }}
         >
           <b>Register</b>

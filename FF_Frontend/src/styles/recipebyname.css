@@ -1,0 +1,32 @@
+.card {
+  margin-top: 5%;
+  min-height: 300px;
+  min-width: 500px;
+  display: grid;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+#search-btn {
+  height: 40px;
+  width: 25%;
+}
+
+#search-btn:hover {
+  color: #793a00;
+  background-color: aliceblue;
+  border-color: #793a00;
+}
+
+.card-body {
+  display: grid;
+  width: 500px;
+}
+
+#search-panel {
+  display: flex;
+  margin-top: 0%;
+}
+#searchdiv {
+  width: 50%;
+}
