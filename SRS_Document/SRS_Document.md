@@ -2,11 +2,7 @@
 
 ## Title :
 
-	FlavourFeed / TastyFeed
-
-## Client :
-
-	---TBDL--- 
+	FlavourFeed
 
 ## Team Members (Stake Holders) :
 
@@ -25,8 +21,6 @@
 	as well as customise their diet plan. Users will also have ability to plan their meal for the day or a week, 
 	generate shopping lists on selected recipes, and get nutritional information.
 
-## Definition :
-	---to be added later---
 
 ## Functional Requirements:
 
