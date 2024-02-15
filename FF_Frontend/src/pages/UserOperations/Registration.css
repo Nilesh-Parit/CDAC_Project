@@ -1,0 +1,79 @@
+#reg-card {
+  margin-top: 3%;
+  margin-left: 25%;
+  width: 50%;
+  box-shadow: 0 0 5px 2px rgba(125, 123, 123, 0.1);
+}
+.form-control {
+  width: 120%;
+  height: 40px;
+  border-radius: 15px;
+  border-color: grey;
+  font-size: 15px;
+  margin-left: 0%;
+}
+.form-select {
+  width: 90%;
+  height: 40px;
+  border-radius: 15px;
+  border-color: grey;
+  font-size: 15px;
+}
+/* .form-group {
+  margin-left: 10%;
+} */
+#signup {
+  margin-left: 40%;
+  margin-top: 3%;
+  margin-bottom: 2%;
+  margin-top: 3%;
+  width: 30%;
+  background-color: #793a00;
+  color: aliceblue;
+}
+
+#signup:hover {
+  background-color: aliceblue;
+  color: #793a00;
+}
+
+label {
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 4%;
+}
+.gen {
+  margin-bottom: -2%;
+}
+.gender {
+  font-weight: lighter;
+}
+h2 {
+  font-size: 100px;
+}
+
+#header {
+  height: 10%;
+}
+
+.row {
+  justify-content: space-evenly;
+}
+
+#reg-card-body {
+  width: 100%;
+}
+
+#countryDropdown {
+  width: 100%;
+  height: 40px;
+  border-radius: 15px;
+  border-color: grey;
+  font-size: 15px;
+}
+#gender-drp {
+  width: 120%;
+}
+#reg-cont {
+  width: 100%;
+}
