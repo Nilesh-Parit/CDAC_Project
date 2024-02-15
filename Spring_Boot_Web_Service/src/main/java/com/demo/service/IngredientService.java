@@ -17,4 +17,6 @@ public interface IngredientService {
 
 	Boolean addAllIngredients(List<Ingredient> recipeIngredients, Recipe r);
 
+	List<Ingredient> getAllDistinctIngredients();
+
 }

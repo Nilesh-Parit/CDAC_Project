@@ -15,7 +15,7 @@ public class Feedback {
     @Column(name = "feedback")
     private String feedback;
     
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name="user_id")
     private User user;
 

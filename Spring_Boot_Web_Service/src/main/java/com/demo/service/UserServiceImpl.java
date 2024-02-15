@@ -110,7 +110,7 @@ public class UserServiceImpl implements UserService{
 	public List<Recipe> getUserRecipes(int userId) {
 	    User user = udao.findById(userId).orElse(null);
 	    if (user != null) {
-	        List<Recipe> userRecipes = user.getUserRecipes();	        // Log user recipes
+	        List<Recipe> userRecipes = user.getUserRecipes();
 	        return userRecipes;
 	    } else {
 	        return null;

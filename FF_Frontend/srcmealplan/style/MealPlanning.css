@@ -1,0 +1,29 @@
+.meal-planning-container {
+  max-width: 800px;
+  margin: 0 auto;
+  
+}
+
+.user-meals {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  color:black;
+}
+
+.meal-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+
+.meal-item > div {
+  margin-bottom: 5px;
+}
+
+
+h1{
+  font-style: italic;
+  font: size 25px;
+  color: brown;
+}

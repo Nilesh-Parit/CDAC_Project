@@ -98,4 +98,9 @@ public class IngredientServiceImpl implements IngredientService {
             return false;
         }
     }
+
+	@Override
+	public List<Ingredient> getAllDistinctIngredients() {
+		return idao.findAllDistinctIngredientNames();
+	}
 }
