@@ -1,21 +1,21 @@
-import "../styles/allrecipes.css";
+import "./AllRecipes.css";
 
-import RecipeThree from "./recipes/tomatosoup";
-import RecipeFour from "./recipes/farmhousepizza";
-import RecipeFive from "./recipes/alooparatha";
-import RecipeSix from "./recipes/recipesix";
-import RecipeSeven from "./recipes/recipeseven";
-import RecipeEight from "./recipes/recipeeight";
-import RecipeNine from "./recipes/recipenine";
-import RecipeTen from "./recipes/recipeten";
+import RecipeThree from "./TomatoSoup";
+import RecipeFour from "./FarmhousePizza";
+import RecipeFive from "./AlooParatha";
+import RecipeSix from "./recipesix";
+import RecipeSeven from "./recipeseven";
+import RecipeEight from "./recipeeight";
+import RecipeNine from "./recipenine";
+import RecipeTen from "./recipeten";
 
-import "../styles/recipelist.css";
+import "./RecipeList.css";
 import { useState } from "react";
-import PaneerTikka from "./recipes/paneertikka";
-import HoneyPotato from "./recipes/honeypotato";
-import TomatoSoup from "./recipes/tomatosoup";
-import FarmhousePizza from "./recipes/farmhousepizza";
-import AlooParatha from "./recipes/alooparatha";
+import PaneerTikka from "./PaneerTikka";
+import HoneyPotato from "./HoneyPotato";
+import TomatoSoup from "./TomatoSoup";
+import FarmhousePizza from "./FarmhousePizza";
+import AlooParatha from "./AlooParatha";
 
 export default function Allrecipes() {
   const [state, setState] = useState("");

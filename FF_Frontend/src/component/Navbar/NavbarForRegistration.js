@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "../styles/Navbar.css";
-import Login from "./login";
-import Help from "./Help";
+import "./Navbar.css";
+import Login from "../../pages/UserOperations/Login";
+// import Help from "../../pages/UserOperations/Help";
 import { Link } from "react-router-dom";
 export default function NavbarReg() {
   const [open, close] = useState(false);

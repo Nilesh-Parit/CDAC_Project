@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/Footer.css";
+import "./Footer.css";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 export default function Footer() {
   const navigate = useNavigate();

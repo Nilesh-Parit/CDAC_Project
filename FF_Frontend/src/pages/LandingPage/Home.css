@@ -331,3 +331,21 @@ h5 {
 #btn-regt {
   width: 20%;
 }
+
+.parallax-container {
+  position: relative;
+  height: 500px; /* Adjust the height as needed */
+  overflow: hidden;
+  background: #333; /* Background color for the parallax effect */
+}
+
+.parallax-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  transition: transform 0.1s ease-out; /* Add a smooth transition effect */
+}

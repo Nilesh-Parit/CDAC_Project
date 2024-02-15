@@ -1,4 +1,4 @@
-import "../../styles/recipelist.css";
+import "./RecipeList.css";
 export default function RecipeOne() {
   return (
     <>

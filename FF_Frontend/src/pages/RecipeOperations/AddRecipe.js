@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "../styles/addrecipe.css";
-import RecipeService from "../services/RecipeService";
-import IngredientService from "../services/IngredientService";
+import "./AddRecipe.css";
+import RecipeService from "../../services/RecipeService";
+import IngredientService from "../../services/IngredientService";
 import { Link, useNavigate } from "react-router-dom";
+
 export default function AddRecipe() {
   const [recipeName, setRecipeName] = useState("");
   const [instructions, setInstructions] = useState("");

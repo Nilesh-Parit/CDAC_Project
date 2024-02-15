@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "../styles/registration.css";
+import "./Registration.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import UserService from "../services/UserService";
+import UserService from "../../services/UserService";
 
 export default function Registration() {
   const [imageFile, setImageFile] = useState(null);

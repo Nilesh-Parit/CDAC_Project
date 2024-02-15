@@ -1,21 +1,21 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Registration from "./pages/registration";
-import Home from "./pages/home";
-import Navbar from "./pages/navbar";
-import Footer from "./component/Footer";
-import NavbarReg from "./pages/navbarForReg";
-import Allrecipes from "./pages/allrecipes";
-import AddRecipe from "./pages/addrecipe";
-import RecipeByName from "./pages/recipebyname";
-import ForgotPassword from "./pages/forgotpassword";
-import UserProfile from "./pages/userprofile";
-import EditProfile from "./pages/editprofile";
-import Navbar_Loggedin from "./pages/navbar_loggedin";
-import UserRecipes from "./pages/userrecipies";
-import EditRecipe from "./pages/editrecipe";
-import FeedbackPage from "./pages/feedback";
-import RecipeDetails from "./pages/recipedetails";
+import Registration from "./pages/UserOperations/Registration";
+import Home from "./pages/LandingPage/Home";
+import Navbar from "../src/component/Navbar/Navbar";
+import Footer from "../src/component/Footer/Footer";
+import NavbarReg from "../src/component/Navbar/NavbarForRegistration";
+import Allrecipes from "./pages/RecipePages/AllRecipes";
+import AddRecipe from "./pages/RecipeOperations/AddRecipe";
+import RecipeByName from "./pages/RecipeOperations/RecipeByName";
+import ForgotPassword from "./pages/UserOperations/ForgotPassword";
+import UserProfile from "./pages/UserPages/UserProfile";
+import EditProfile from "./pages/UserOperations/EditProfile";
+import NavbarAfterLogin from "./component/Navbar/NavbarAfterLogin";
+import UserRecipes from "./pages/RecipeOperations/UserRecipies";
+import EditRecipe from "./pages/RecipeOperations/EditRecipe";
+import FeedbackPage from "./pages/UserOperations/Feedback";
+import RecipeDetails from "./pages/RecipePages/RecipeDetails";
 
 function App() {
   return (
@@ -53,7 +53,7 @@ function App() {
             path="/addrecipe"
             element={
               <>
-                <Navbar_Loggedin />
+                <NavbarAfterLogin />
                 <AddRecipe />
               </>
             }
@@ -80,7 +80,7 @@ function App() {
             path="/userprofile"
             element={
               <>
-                <Navbar_Loggedin />
+                <NavbarAfterLogin />
                 <UserProfile />
               </>
             }
@@ -89,7 +89,7 @@ function App() {
             path="/editprofile"
             element={
               <>
-                <Navbar_Loggedin />
+                <NavbarAfterLogin />
                 <EditProfile />
               </>
             }
@@ -98,7 +98,7 @@ function App() {
             path="/userrecipes"
             element={
               <>
-                <Navbar_Loggedin />
+                <NavbarAfterLogin />
                 <UserRecipes />
               </>
             }
@@ -107,7 +107,7 @@ function App() {
             path="/editrecipe/:id"
             element={
               <>
-                <Navbar_Loggedin />
+                <NavbarAfterLogin />
                 <EditRecipe />
               </>
             }
@@ -116,7 +116,7 @@ function App() {
             path="/feedback"
             element={
               <>
-                <Navbar_Loggedin />
+                <NavbarAfterLogin />
                 <FeedbackPage />
               </>
             }
@@ -125,7 +125,7 @@ function App() {
             path="/recipedetails/:id"
             element={
               <>
-                <Navbar_Loggedin />
+                <NavbarAfterLogin />
                 <RecipeDetails />
               </>
             }

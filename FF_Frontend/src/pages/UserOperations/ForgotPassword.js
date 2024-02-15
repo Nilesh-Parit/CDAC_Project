@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import UserService from "../services/UserService";
-import "../styles/forgotpassword.css";
+import UserService from "../../services/UserService";
+import "./ForgotPassword.css";
 
 export default function ForgotPassword() {
   const [username, setUsername] = useState("");

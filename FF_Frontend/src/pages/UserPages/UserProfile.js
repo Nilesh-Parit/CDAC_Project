@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import UserService from "../services/UserService";
+import UserService from "../../services/UserService";
 import { Link } from "react-router-dom";
-import "../styles/userprofile.css";
+import "./UserProfile.css";
 
 export default function UserProfile() {
   const [user, setUser] = useState(null);

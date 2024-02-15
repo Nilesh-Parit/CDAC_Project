@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import FeedbackService from "../services/FeedbackService";
-import "../styles/feedback.css";
+import FeedbackService from "../../services/FeedbackService";
+import "./Feedback.css";
 
 export default function FeedbackPage() {
   const [feedback, setFeedback] = useState("");

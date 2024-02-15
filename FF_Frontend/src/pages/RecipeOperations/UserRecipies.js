@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import UserService from "../services/UserService";
-import RecipeService from "../services/RecipeService";
-import "../styles/userrecipies.css";
+import UserService from "../../services/UserService";
+import RecipeService from "../../services/RecipeService";
+import "./UserRecipies.css";
 
 export default function UserRecipes() {
   const [postedRecipes, setPostedRecipes] = useState([]);

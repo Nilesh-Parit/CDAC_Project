@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import RecipeService from "../services/RecipeService";
+import RecipeService from "../../services/RecipeService";
 
 export default function RecipeDetails() {
   const { id } = useParams();

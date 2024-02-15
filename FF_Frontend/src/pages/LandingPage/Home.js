@@ -1,30 +1,23 @@
-import "../styles/home.css";
+import Header from "../../component/Header/Header";
+import "./Home.css";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 
 export default function Home() {
   const navigate = useNavigate();
 
+  document.addEventListener("DOMContentLoaded", function () {
+    let parallax = document.querySelector(".parallax-container");
+    let speed = 0.5; // Adjust the speed as needed
+
+    window.addEventListener("scroll", function () {
+      let yPos = -window.scrollY * speed;
+      parallax.style.backgroundPositionY = yPos + "px";
+    });
+  });
+
   return (
     <>
-      <header className="header">
-        <div className="header__title" id="parallax">
-          <h1>
-            To live a {/* <!-- Green highlight effect --> */}&nbsp;
-            <span className="highlight">full life, </span>
-            <br />
-            you have to fill&nbsp;
-            <br />
-            <span className="highlight">your stomach</span>
-            &nbsp;first.
-          </h1>
-          <img
-            src="images/cooking-at-home.gif"
-            className="header__img"
-            alt="vaccine"
-          />
-        </div>
-      </header>
-
+      <Header />
       <section className="section" id="section--1">
         <div className="section__title">
           <h2 className="section__description">Features</h2>
@@ -130,7 +123,7 @@ export default function Home() {
       <section>
         <h2
           className="section__description"
-          style={{ marginLeft: "15%", marginBottom: "2%" }}
+          style={{ marginLeft: "0%", marginBottom: "2%" }}
         >
           FAQ's
         </h2>

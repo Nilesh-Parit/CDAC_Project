@@ -1,4 +1,4 @@
-import "../styles/recipebyname.css";
+import "./RecipeByName.css";
 import axios from "axios";
 
 export default function RecipeByName() {
@@ -9,9 +9,9 @@ export default function RecipeByName() {
     );
     recipe?.then((res) => {
       console.log(res);
-      if(res.data.meals && res.data.meals.length >0){
-      var infoProcedure = res?.data?.meals[0].strInstructions;
-      var infoCuisine = res?.data?.meals[0].strArea;
+      if (res.data.meals && res.data.meals.length > 0) {
+        var infoProcedure = res?.data?.meals[0].strInstructions;
+        var infoCuisine = res?.data?.meals[0].strArea;
       }
       //   console.log(info);
       document.getElementById(
@@ -21,7 +21,7 @@ export default function RecipeByName() {
         "info-ingredients"
       ).innerHTML = `<p>${infoCuisine}</p>`;
     });
-// }
+    // }
   }
 
   return (

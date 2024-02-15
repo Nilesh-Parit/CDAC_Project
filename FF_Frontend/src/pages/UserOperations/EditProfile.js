@@ -52,8 +52,8 @@
 //           return <div className="loading">Loading...</div>;
 //         }
 import React, { useState, useEffect } from "react";
-import UserService from "../services/UserService";
-import "../styles/editprofile.css";
+import UserService from "../../services/UserService";
+import "./EditProfile.css";
 export default function EditProfile() {
   const [user, setUser] = useState(null);
   const [editedUser, setEditedUser] = useState(null);
@@ -201,6 +201,7 @@ export default function EditProfile() {
             <select
               name="gender"
               className="form-select"
+              id="editp-gender-drp"
               value={editedUser.gender}
               onChange={handleInputChange}
             >
