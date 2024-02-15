@@ -8,6 +8,14 @@ import NavbarReg from "./pages/navbarForReg";
 import Allrecipes from "./pages/allrecipes";
 import AddRecipe from "./pages/addrecipe";
 import RecipeByName from "./pages/recipebyname";
+import ForgotPassword from "./pages/forgotpassword";
+import UserProfile from "./pages/userprofile";
+import EditProfile from "./pages/editprofile";
+import Navbar_Loggedin from "./pages/navbar_loggedin";
+import UserRecipes from "./pages/userrecipies";
+import EditRecipe from "./pages/editrecipe";
+import FeedbackPage from "./pages/feedback";
+import RecipeDetails from "./pages/recipedetails";
 
 function App() {
   return (
@@ -45,7 +53,7 @@ function App() {
             path="/addrecipe"
             element={
               <>
-                <NavbarReg />
+                <Navbar_Loggedin />
                 <AddRecipe />
               </>
             }
@@ -56,6 +64,69 @@ function App() {
               <>
                 <NavbarReg />
                 <RecipeByName />
+              </>
+            }
+          ></Route>
+          <Route
+            path="/forgotpassword"
+            element={
+              <>
+                <NavbarReg />
+                <ForgotPassword />
+              </>
+            }
+          ></Route>
+          <Route
+            path="/userprofile"
+            element={
+              <>
+                <Navbar_Loggedin />
+                <UserProfile />
+              </>
+            }
+          ></Route>
+          <Route
+            path="/editprofile"
+            element={
+              <>
+                <Navbar_Loggedin />
+                <EditProfile />
+              </>
+            }
+          ></Route>
+          <Route
+            path="/userrecipes"
+            element={
+              <>
+                <Navbar_Loggedin />
+                <UserRecipes />
+              </>
+            }
+          ></Route>
+          <Route
+            path="/editrecipe/:id"
+            element={
+              <>
+                <Navbar_Loggedin />
+                <EditRecipe />
+              </>
+            }
+          ></Route>
+          <Route
+            path="/feedback"
+            element={
+              <>
+                <Navbar_Loggedin />
+                <FeedbackPage />
+              </>
+            }
+          ></Route>
+          <Route
+            path="/recipedetails/:id"
+            element={
+              <>
+                <Navbar_Loggedin />
+                <RecipeDetails />
               </>
             }
           ></Route>

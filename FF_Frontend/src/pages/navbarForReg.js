@@ -2,6 +2,7 @@ import { useState } from "react";
 import "../styles/Navbar.css";
 import Login from "./login";
 import Help from "./Help";
+import { Link } from "react-router-dom";
 export default function NavbarReg() {
   const [open, close] = useState(false);
   const modalHandler = () => {
@@ -13,32 +14,26 @@ export default function NavbarReg() {
         className="navbar navbar-expand-lg navbar-light fixed-top"
         style={{ background: "rgb(240, 240, 240)" }}
       >
-        <a href="/">
+        <Link to="/">
           <img
             src="/images/logo.png"
             alt="Logo"
             className="nav__logo"
             id="logo"
           />
-        </a>
+        </Link>
+
         <ul className="nav__links">
           <li className="nav__item">
-            <a className="nav__link" href="#section--3">
-              Help
-            </a>
+            <Link className="nav__link" to="/recipebyname">
+              Search recipe by name
+            </Link>
           </li>
+
           <li className="nav__item">
-            {/* event listner to open modal */}
-            {/* <button
-              data-toggle="modal"
-              data-target="#modalopen"
-              id="login__btn"
-              type="button"
-              className="btn btn-info rounded-pill px-4"
-              onClick={modalHandler}
-            >
-              Click to login
-            </button> */}
+            <Link className="nav__link" to="/allrecipes">
+              All Recipes
+            </Link>
           </li>
         </ul>
       </nav>

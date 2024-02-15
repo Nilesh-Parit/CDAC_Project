@@ -32,6 +32,9 @@ public class Recipe {
     @Column(name = "recipe_type")
     private String recipeType;
     
+    @Column(name = "cuisine")
+    private String cuisine;
+    
     @JsonIgnore
     @OneToOne
 	@JoinColumn(name="user_id")
@@ -57,7 +60,7 @@ public class Recipe {
     }
     
 	public Recipe(Integer recipeId, @NotBlank(message = "Recipe name cannot be Blank") String recipeName,
-			String instructions, String cookTime, Integer totalCalories, String recipeType, String recipeDescription,
+			String instructions, String cookTime, Integer totalCalories, String recipeType, String cuisine, String recipeDescription,
 			User u, Set<User> userRecipes, Set<Tag> recipeTags, List<Ingredient> recipeIngredients) {
 		super();
 		this.recipeId = recipeId;
@@ -66,6 +69,7 @@ public class Recipe {
 		this.cookTime = cookTime;
 		this.totalCalories = totalCalories;
 		this.recipeType = recipeType;
+		this.cuisine = cuisine;
 		this.recipeDescription = recipeDescription;
 		this.recipeTags = recipeTags;
 		this.recipeIngredients = recipeIngredients;
@@ -82,10 +86,19 @@ public class Recipe {
 		this.cookTime = cookTime;
 		this.totalCalories = totalCalories;
 		this.recipeType = recipeType;
+		this.cuisine = cuisine;
 		this.recipeDescription = recipeDescription;
 		this.recipe_image = recipe_image;
 		this.recipeTags = recipeTags;
 		this.recipeIngredients = recipeIngredients;
+	}
+
+	public String getCuisine() {
+		return cuisine;
+	}
+
+	public void setCuisine(String cuisine) {
+		this.cuisine = cuisine;
 	}
 
 	public byte[] getRecipe_image() {
@@ -180,7 +193,7 @@ public class Recipe {
 	public String toString() {
 		return "Recipe [recipeId=" + recipeId + ", recipeName=" + recipeName + ", instructions=" + instructions
 				+ ", cookTime=" + cookTime + ", totalCalories=" + totalCalories + ", recipeType=" + recipeType
-				+ ", recipeDescription=" + recipeDescription + ", recipe_image=" + Arrays.toString(recipe_image)
+				+ ", cuisine=" + cuisine +", recipeDescription=" + recipeDescription + ", recipe_image=" + Arrays.toString(recipe_image)
 				+ ", recipeTags=" + recipeTags + ", recipeIngredients=" + recipeIngredients + "]";
 	}
 }

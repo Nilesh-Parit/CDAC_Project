@@ -152,6 +152,7 @@ h5 {
 /* #section--1 {
   margin-top: -200px;
 } */
+
 /* FEATURES */
 .features {
   display: grid;
@@ -274,7 +275,7 @@ h5 {
 
 /* SIGNUP */
 .section--sign-up {
-  background-color: #37383d;
+  background-color: #9d8f8f;
   border-top: none;
   border-bottom: 1px solid #444;
   text-align: center;
@@ -297,7 +298,7 @@ h5 {
 .accordian {
   width: 80px;
 }
-.accordion-item {
+#accordion-item-home {
   width: 70%;
   margin-left: 15%;
   border-width: 2;
@@ -325,4 +326,8 @@ h5 {
   color: black;
   margin: 0;
   font-size: 24px;
+}
+
+#btn-regt {
+  width: 20%;
 }

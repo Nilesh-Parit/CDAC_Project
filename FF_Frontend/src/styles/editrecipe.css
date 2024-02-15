@@ -1,0 +1,26 @@
+#editrecipe-card {
+  margin-top: 2%;
+  margin-left: 30%;
+  width: 50%;
+}
+
+#recipeId,
+#recipeName,
+#instructions,
+#cookTime,
+#totalCalories,
+#recipeType,
+#recipeDescription {
+  width: 80%;
+}
+
+#editr-card-body {
+  margin-left: 10%;
+}
+
+#editrheader {
+  margin-left: -20%;
+}
+#editr-btn {
+  margin-left: 25%;
+}

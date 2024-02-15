@@ -71,3 +71,86 @@
 .form-control {
   width: 100%;
 }
+.form-group {
+  margin-bottom: 0rem;
+}
+
+#adding-btn {
+  margin-left: 20%;
+  margin-top: 1%;
+}
+
+#addnewrecp-div {
+  margin-left: 30%;
+  margin-top: 0px;
+}
+#addingr-div {
+  margin-top: 1%;
+  margin-left: 28%;
+  justify-content: space-around;
+}
+#accordionFlushExample {
+  border-radius: 25%;
+  width: 120%;
+}
+
+.accordian {
+  width: 80px;
+}
+#accordion-item-addr {
+  width: 90%;
+  margin-left: 0%;
+  border-width: 2;
+}
+
+#accordion-body-addr {
+  max-height: 250px;
+  overflow-y: auto;
+  height: 50%;
+  font-size: medium;
+  font-weight: 300;
+}
+
+#accordionExample-addr {
+  margin-left: -17%;
+  width: 170%;
+}
+
+#accordian-txt {
+  font-size: 1.3rem;
+  /* background: #793a00; */
+}
+
+#cancel-btn {
+  margin-left: 1%;
+}
+
+#upload-lbl {
+  font-size: 100%;
+  margin-top: 0px;
+}
+.rounded-pill:hover {
+  border: 1px solid #793a00;
+  color: #793a00;
+}
+.rounded-pill {
+  color: aliceblue;
+  background-color: #793a00;
+}
+
+.accordian-input {
+  width: 100%;
+  height: 40px;
+  border-radius: 15px;
+  border-color: grey;
+  font-size: 15px;
+  margin-left: 0%;
+}
+
+#addr-card-body {
+  width: 85%;
+}
+
+#rec-img-div {
+  width: 100%;
+}

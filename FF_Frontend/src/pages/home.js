@@ -77,6 +77,15 @@ export default function Home() {
               and unforgettable. A talented chef or a passionate home cook may
               turn the kitchen into a work of culinary art.
             </p>
+            <h5>
+              <Link
+                to="/addrecipe"
+                // className="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                id="clickhere"
+              >
+                <b>Add your recipe→</b>
+              </Link>
+            </h5>
           </div>
           <img
             src="images/chef2.jpg"
@@ -126,7 +135,7 @@ export default function Home() {
           FAQ's
         </h2>
         <div className="accordion" id="accordionExample">
-          <div className="accordion-item">
+          <div className="accordion-item" id="accordion-item-home">
             <h2 className="accordion-header" id="headingOne">
               <button
                 className="accordion-button"
@@ -165,7 +174,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="accordion-item">
+          <div className="accordion-item" id="accordion-item-home">
             <h2 className="accordion-header" id="headingTwo">
               <button
                 className="accordion-button collapsed"
@@ -205,7 +214,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="accordion-item">
+          <div className="accordion-item" id="accordion-item-home">
             <h2 className="accordion-header" id="headingThree">
               <button
                 className="accordion-button collapsed"
@@ -257,7 +266,7 @@ export default function Home() {
         </div>
         <button
           id="btn-regt"
-          className="btn  rounded-pill"
+          className="btn rounded-pill"
           onClick={() => {
             navigate("/registration");
           }}

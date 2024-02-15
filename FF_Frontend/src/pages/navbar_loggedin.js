@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 export const userContext = createContext();
 
-export default function Navbar() {
+export default function Navbar_Loggedin() {
   // const [recipe, setRecipe] = useState("");
 
   const [open, close] = useState(false); //for login pop up
@@ -35,12 +35,14 @@ export default function Navbar() {
         className="navbar navbar-expand-lg navbar-light fixed-top"
         style={{ background: "rgb(240, 240, 240)" }}
       >
-        <img
-          src="/images/logo.png"
-          alt="Logo"
-          className="nav__logo"
-          id="logo"
-        />
+        <Link to="/">
+          <img
+            src="/images/logo.png"
+            alt="Logo"
+            className="nav__logo"
+            id="logo"
+          />
+        </Link>
 
         <ul className="nav__links">
           <li className="nav__item">
@@ -66,13 +68,13 @@ export default function Navbar() {
             <button
               data-toggle="modal"
               data-target="#modalopen"
-              id="login__btn"
+              id="logout__btn"
               type="button"
               className="btn rounded-pill px-4"
               onClick={modalHandler}
               data-dismiss="model"
             >
-              <b>Login</b>
+              <b>Logout</b>
             </button>
           </li>
         </ul>

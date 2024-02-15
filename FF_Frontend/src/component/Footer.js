@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import "../styles/Footer.css";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 export default function Footer() {
   const navigate = useNavigate();
 
   return (
     <>
-      
-
       <footer className="footer" id="footer">
         <img
           src="/images/logo2.png"
@@ -17,30 +15,30 @@ export default function Footer() {
         />
         <ul className="footer__nav">
           <li className="footer__item">
-            <a className="footer__link" href="#">
+            <Link className="footer__link" to="#">
               About
-            </a>
+            </Link>
           </li>
           <li className="footer__item">
-            <a className="footer__link" href="#">
+            <Link className="footer__link" to="#">
               Terms of Use
-            </a>
+            </Link>
           </li>
           <li className="footer__item">
-            <a className="footer__link" href="#">
+            <Link className="footer__link" to="#">
               Privacy Policy
-            </a>
+            </Link>
           </li>
 
           <li className="footer__item">
-            <a className="footer__link" href="#">
-              Blog
-            </a>
+            <Link className="footer__link" to="#">
+              Contact Us
+            </Link>
           </li>
           <li className="footer__item">
-            <a className="footer__link" href="#">
-              Contact Us
-            </a>
+            <Link className="footer__link" to="/feedback">
+              Feedback
+            </Link>
           </li>
         </ul>
       </footer>
