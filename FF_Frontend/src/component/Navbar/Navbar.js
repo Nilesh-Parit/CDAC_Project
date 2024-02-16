@@ -40,19 +40,31 @@ export default function Navbar() {
 
         <ul className="nav__links">
           <li className="nav__item">
-            <Link className="nav__link" to="/recipebyname">
+            <Link
+              className="nav__link"
+              to="/user/recipebyname"
+              onClick={() => {
+                window.scrollTo(0, 0);
+              }}
+            >
               Search recipe by name
             </Link>
           </li>
 
           <li className="nav__item">
-            <Link className="nav__link" to="/allrecipes">
+            <Link
+              className="nav__link"
+              to="/user/allrecipes"
+              onClick={() => {
+                window.scrollTo(0, 0);
+              }}
+            >
               All Recipes
             </Link>
           </li>
 
           <li className="nav__item">
-            <Link className="nav__link" to="/userprofile">
+            <Link className="nav__link" to="/user/userpage">
               User Profile
             </Link>
           </li>
@@ -66,7 +78,7 @@ export default function Navbar() {
               type="button"
               className="btn rounded-pill px-4"
               onClick={modalHandler}
-              data-dismiss="model"
+              data-dismiss="modal"
             >
               <b>Login</b>
             </button>

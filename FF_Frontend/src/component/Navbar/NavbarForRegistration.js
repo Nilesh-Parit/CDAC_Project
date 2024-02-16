@@ -20,18 +20,21 @@ export default function NavbarReg() {
             alt="Logo"
             className="nav__logo"
             id="logo"
+            onClick={() => {
+              window.scrollTo(0, 0);
+            }}
           />
         </Link>
 
         <ul className="nav__links">
           <li className="nav__item">
-            <Link className="nav__link" to="/recipebyname">
+            <Link className="nav__link" to="/user/recipebyname">
               Search recipe by name
             </Link>
           </li>
 
           <li className="nav__item">
-            <Link className="nav__link" to="/allrecipes">
+            <Link className="nav__link" to="/user/allrecipes">
               All Recipes
             </Link>
           </li>

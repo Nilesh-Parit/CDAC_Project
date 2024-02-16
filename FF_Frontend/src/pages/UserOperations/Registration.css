@@ -72,8 +72,13 @@ h2 {
   font-size: 15px;
 }
 #gender-drp {
-  width: 120%;
+  width: 100%;
 }
 #reg-cont {
   width: 100%;
+}
+
+#reg-uname,
+#reg-pword,
+#reg-cnfpword {
 }

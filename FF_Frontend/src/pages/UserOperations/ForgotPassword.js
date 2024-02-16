@@ -52,7 +52,7 @@ export default function ForgotPassword() {
       >
         FlavourFeed
       </h1>
-      <div className="card ">
+      <div className="card " id="fpword-card">
         <div className="card-body" id="card-body" style={{ marginTop: "2%" }}>
           <h2 className="text-center" id="signUpheader">
             <b>Reset Password</b>
@@ -63,7 +63,7 @@ export default function ForgotPassword() {
             <input
               type="text"
               className="form-control"
-              id="uname"
+              id="fpword-uname"
               value={username}
               onChange={handleUsernameChange}
               placeholder="Username"
@@ -73,7 +73,7 @@ export default function ForgotPassword() {
             <input
               type="password"
               className="form-control"
-              id="pword"
+              id="fpword-pword"
               value={newPassword}
               onChange={handlePasswordChange}
               placeholder="Password"
@@ -83,7 +83,7 @@ export default function ForgotPassword() {
             <input
               type="password"
               className="form-control"
-              id="cnfpword"
+              id="fpword-cnfpword"
               value={confirmnewPassword}
               onChange={handleConfirmPasswordChange}
               placeholder="Confirm Password"

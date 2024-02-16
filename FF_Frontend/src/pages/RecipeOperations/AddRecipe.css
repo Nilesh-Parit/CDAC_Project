@@ -69,7 +69,7 @@
 }
 
 .form-control {
-  width: 100%;
+  width: 120%;
 }
 .form-group {
   margin-bottom: 0rem;
@@ -80,7 +80,7 @@
   margin-top: 1%;
 }
 
-#addnewrecp-div {
+#addr-div {
   margin-left: 30%;
   margin-top: 0px;
 }
@@ -152,5 +152,9 @@
 }
 
 #rec-img-div {
-  width: 100%;
+  width: 120%;
+}
+
+#inputGroupFile01 {
+  width: 120%;
 }

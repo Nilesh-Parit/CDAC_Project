@@ -42,52 +42,122 @@ export default function Allrecipes() {
                 </tr> */}
 
                 <tr scope="col">
-                  <td id="first" className="recipe_list" scope="col">
+                  <td
+                    id="first"
+                    className="recipe_list"
+                    scope="col"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                  >
                     Paneer Tikka
                   </td>
                 </tr>
                 <tr scope="col">
-                  <td id="second" className="recipe_list" scope="col">
+                  <td
+                    id="second"
+                    className="recipe_list"
+                    scope="col"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                  >
                     Tangy Potato
                   </td>
                 </tr>
                 <tr scope="col">
-                  <td id="third" className="recipe_list" scope="col">
+                  <td
+                    id="third"
+                    className="recipe_list"
+                    scope="col"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                  >
                     Tomato Soup
                   </td>
                 </tr>
                 <tr scope="col">
-                  <td id="fourth" className="recipe_list" scope="col">
+                  <td
+                    id="fourth"
+                    className="recipe_list"
+                    scope="col"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                  >
                     Farmhouse Pizza
                   </td>
                 </tr>
                 <tr scope="col">
-                  <td id="fifth" className="recipe_list" scope="col">
+                  <td
+                    id="fifth"
+                    className="recipe_list"
+                    scope="col"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                  >
                     Aloo Paratha
                   </td>
                 </tr>
                 <tr scope="col">
-                  <td id="sixth" className="recipe_list" scope="col">
+                  <td
+                    id="sixth"
+                    className="recipe_list"
+                    scope="col"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                  >
                     Dhokla
                   </td>
                 </tr>
                 <tr scope="col">
-                  <td id="seventh" className="recipe_list" scope="col">
+                  <td
+                    id="seventh"
+                    className="recipe_list"
+                    scope="col"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                  >
                     Fudge Cake
                   </td>
                 </tr>
                 <tr scope="col">
-                  <td id="eighth" className="recipe_list" scope="col">
+                  <td
+                    id="eighth"
+                    className="recipe_list"
+                    scope="col"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                  >
                     Green Salad
                   </td>
                 </tr>
                 <tr scope="col">
-                  <td id="ninth" className="recipe_list" scope="col">
+                  <td
+                    id="ninth"
+                    className="recipe_list"
+                    scope="col"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                  >
                     Milkshake
                   </td>
                 </tr>
                 <tr scope="col">
-                  <td id="tenth" className="recipe_list" scope="col">
+                  <td
+                    id="tenth"
+                    className="recipe_list"
+                    scope="col"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                  >
                     Tarri Poha
                   </td>
                 </tr>

@@ -137,7 +137,7 @@ export default function AddRecipe() {
               <input
                 type="text"
                 className="form-control"
-                id="recipeName"
+                id="addr-recipeName"
                 value={recipeName}
                 onChange={(e) => setRecipeName(e.target.value)}
               />
@@ -146,7 +146,7 @@ export default function AddRecipe() {
               <label htmlFor="instructions">Instructions</label>
               <textarea
                 className="form-control"
-                id="instructions"
+                id="addr-instructions"
                 rows="3"
                 value={instructions}
                 onChange={(e) => setInstructions(e.target.value)}
@@ -157,7 +157,7 @@ export default function AddRecipe() {
               <input
                 type="text"
                 className="form-control"
-                id="cookTime"
+                id="addr-cookTime"
                 value={cookTime}
                 onChange={(e) => setCookTime(e.target.value)}
               />
@@ -167,7 +167,7 @@ export default function AddRecipe() {
               <input
                 type="number"
                 className="form-control"
-                id="totalCalories"
+                id="addr-totalCalories"
                 value={totalCalories}
                 onChange={(e) => setTotalCalories(e.target.value)}
               />
@@ -176,7 +176,7 @@ export default function AddRecipe() {
               <label htmlFor="recipeType">Recipe Type</label>
               <select
                 className="form-control"
-                id="recipeType"
+                id="addr-recipeType"
                 value={recipeType}
                 onChange={(e) => setRecipeType(e.target.value)}
               >
@@ -189,7 +189,7 @@ export default function AddRecipe() {
               <label htmlFor="recipeDescription">Recipe Description</label>
               <textarea
                 className="form-control"
-                id="recipeDescription"
+                id="addr-recipeDescription"
                 rows="3"
                 value={recipeDescription}
                 onChange={(e) => setRecipeDescription(e.target.value)}
@@ -201,7 +201,7 @@ export default function AddRecipe() {
                 <input
                   type="file"
                   class="form-control"
-                  id="inputGroupFile01"
+                  id="addr-inputGroupFile01"
                   accept="image/*"
                   onChange={handleImageChange}
                 />
@@ -222,7 +222,7 @@ export default function AddRecipe() {
               <label htmlFor="existingIngredients">Select Ingredient</label>
               <select
                 className="form-select"
-                id="existingIngredients"
+                id="addr-existingIngredients"
                 onChange={(e) =>
                   setSelectedIngredients([
                     ...selectedIngredients,
@@ -362,7 +362,7 @@ export default function AddRecipe() {
             )} */}
             <br />
 
-            <div id="addnewrecp-div">
+            <div id="addr-div">
               <button
                 type="button"
                 className="btn rounded-pill"
@@ -370,7 +370,7 @@ export default function AddRecipe() {
               >
                 Add Recipe
               </button>
-              <Link to="/userrecipies" className="btn ml-2 rounded-pill">
+              <Link to="/user/userrecipies" className="btn ml-2 rounded-pill">
                 Cancel
               </Link>
             </div>

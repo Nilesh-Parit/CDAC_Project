@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import UserService from "../../services/UserService";
 import RecipeService from "../../services/RecipeService";
-import "./UserRecipies.css";
+import "./UserRecipes.css";
 
 export default function UserRecipes() {
   const [postedRecipes, setPostedRecipes] = useState([]);
@@ -77,7 +77,7 @@ export default function UserRecipes() {
                       )}
                     </td>
                     <td>
-                      <Link to={`/editrecipe/${recipe.recipeId}`}>
+                      <Link to={`/user/editrecipe/${recipe.recipeId}`}>
                         <button className="btn btn-sm rounded-pill">
                           Edit
                         </button>
@@ -90,7 +90,7 @@ export default function UserRecipes() {
                         Delete
                       </button>
                       &nbsp;
-                      <Link to={`/recipedetails/${recipe.recipeId}`}>
+                      <Link to={`/user/recipedetails/${recipe.recipeId}`}>
                         <button className="btn btn-sm rounded-pill">
                           View
                         </button>
@@ -101,7 +101,7 @@ export default function UserRecipes() {
             </tbody>
           </table>
           <div id="addrec-div">
-            <Link to="/addrecipe">
+            <Link to="/user/addrecipe">
               <button className="btn rounded-pill ">Add New Recipe</button>
             </Link>
           </div>

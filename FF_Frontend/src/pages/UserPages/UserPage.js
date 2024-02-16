@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import UserService from "../../services/UserService";
 import { Link } from "react-router-dom";
-import "./UserProfile.css";
+import "./UserPage.css";
 
-export default function UserProfile() {
+export default function UserPage() {
   const [user, setUser] = useState(null);
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [imageURL, setImageURL] = useState(null); // New state for storing image URL
@@ -92,7 +92,7 @@ export default function UserProfile() {
           </span>
         </div>
         <div id="userrecipies-div">
-          <Link to="/userrecipies">
+          <Link to="/user/userrecipes">
             <button className="form-control rounded-pill" id="userrecipies-btn">
               My Recipies
             </button>
@@ -100,7 +100,7 @@ export default function UserProfile() {
         </div>
         <div id="user-actions">
           <div>
-            <Link to="/editprofile">
+            <Link to="/user/editprofile">
               <button className="edit-btn rounded-pill" id="user-btn">
                 Edit Profile
               </button>
