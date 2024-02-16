@@ -1,5 +1,6 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from "react";
+import { BrowserRouter, Routes, Route, Redirect } from "react-router-dom";
 import Registration from "./pages/UserOperations/Registration";
 import Home from "./pages/LandingPage/Home";
 import Navbar from "../src/component/Navbar/Navbar";
@@ -9,19 +10,25 @@ import Allrecipes from "./pages/RecipePages/AllRecipes";
 import AddRecipe from "./pages/RecipeOperations/AddRecipe";
 import RecipeByName from "./pages/RecipeOperations/RecipeByName";
 import ForgotPassword from "./pages/UserOperations/ForgotPassword";
-import UserProfile from "./pages/UserPages/UserProfile";
 import EditProfile from "./pages/UserOperations/EditProfile";
 import NavbarAfterLogin from "./component/Navbar/NavbarAfterLogin";
-import UserRecipes from "./pages/RecipeOperations/UserRecipies";
+import UserRecipes from "./pages/RecipeOperations/UserRecipes";
 import EditRecipe from "./pages/RecipeOperations/EditRecipe";
 import FeedbackPage from "./pages/UserOperations/Feedback";
 import RecipeDetails from "./pages/RecipePages/RecipeDetails";
+import UserPage from "./pages/UserPages/UserPage";
+import AdminDashboard from "./pages/AdminPages/Dashboard";
+import AllUserRecipies from "./pages/AdminPages/AllUserRecipies";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
+          {/* <Route exact path="/">
+            <Redirect to="/user/home" />
+          </Route> */}
+
           <Route
             path="/"
             element={
@@ -31,8 +38,9 @@ function App() {
               </div>
             }
           />
+
           <Route
-            path="/registration"
+            path="/user/registration"
             element={
               <>
                 <NavbarReg />
@@ -41,7 +49,7 @@ function App() {
             }
           />
           <Route
-            path="/allrecipes"
+            path="/user/allrecipes"
             element={
               <>
                 <NavbarReg />
@@ -50,7 +58,7 @@ function App() {
             }
           ></Route>
           <Route
-            path="/addrecipe"
+            path="/user/addrecipe"
             element={
               <>
                 <NavbarAfterLogin />
@@ -59,7 +67,7 @@ function App() {
             }
           ></Route>
           <Route
-            path="/recipebyname"
+            path="/user/recipebyname"
             element={
               <>
                 <NavbarReg />
@@ -68,7 +76,7 @@ function App() {
             }
           ></Route>
           <Route
-            path="/forgotpassword"
+            path="/user/forgotpassword"
             element={
               <>
                 <NavbarReg />
@@ -77,16 +85,16 @@ function App() {
             }
           ></Route>
           <Route
-            path="/userprofile"
+            path="/user/userpage"
             element={
               <>
                 <NavbarAfterLogin />
-                <UserProfile />
+                <UserPage />
               </>
             }
           ></Route>
           <Route
-            path="/editprofile"
+            path="/user/editprofile"
             element={
               <>
                 <NavbarAfterLogin />
@@ -95,7 +103,7 @@ function App() {
             }
           ></Route>
           <Route
-            path="/userrecipes"
+            path="/user/userrecipes"
             element={
               <>
                 <NavbarAfterLogin />
@@ -104,7 +112,7 @@ function App() {
             }
           ></Route>
           <Route
-            path="/editrecipe/:id"
+            path="/user/editrecipe/:id"
             element={
               <>
                 <NavbarAfterLogin />
@@ -113,7 +121,7 @@ function App() {
             }
           ></Route>
           <Route
-            path="/feedback"
+            path="/user/feedback"
             element={
               <>
                 <NavbarAfterLogin />
@@ -122,11 +130,28 @@ function App() {
             }
           ></Route>
           <Route
-            path="/recipedetails/:id"
+            path="/user/recipedetails/:id"
             element={
               <>
                 <NavbarAfterLogin />
                 <RecipeDetails />
+              </>
+            }
+          ></Route>
+          <Route
+            path="/admin/dashboard"
+            element={
+              <>
+                <Navbar />
+                <AdminDashboard />
+              </>
+            }
+          ></Route>
+          <Route
+            path="/admin/alluserrecipies"
+            element={
+              <>
+                <AllUserRecipies />
               </>
             }
           ></Route>

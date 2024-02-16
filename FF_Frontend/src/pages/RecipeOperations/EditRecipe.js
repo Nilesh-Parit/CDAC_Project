@@ -69,7 +69,7 @@ export default function EditRecipe() {
           recipe_image: null,
           recipeIngredients: [],
         });
-        navigate("/userrecipes");
+        navigate("/user/userrecipes");
       })
       .catch((err) => {
         console.log("Error occurred", err);

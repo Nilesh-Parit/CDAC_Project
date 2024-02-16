@@ -4,8 +4,17 @@
   width: 50%;
   box-shadow: 0 0 5px 2px rgba(125, 123, 123, 0.1);
 }
-.form-control {
-  width: 120%;
+#editp-fname,
+#editp-lname,
+#edit-uname,
+#editp-pword,
+#editp-email,
+#editp-dob,
+#editp-gender-drp,
+#editp-num,
+#editp-pref,
+#editp-alle {
+  width: 100%;
   height: 40px;
   border-radius: 15px;
   border-color: grey;
@@ -24,7 +33,7 @@
     margin-left: 10%;
   } */
 #updateprofile-btn {
-  margin-left: 30%;
+  margin-left: 20%;
   margin-top: 3%;
   margin-bottom: 2%;
   margin-top: 3%;
@@ -72,9 +81,7 @@ h2 {
   border-color: grey;
   font-size: 15px;
 }
-editp-gender-drp {
-  width: 120%;
-}
+
 #reg-cont {
   width: 100%;
 }

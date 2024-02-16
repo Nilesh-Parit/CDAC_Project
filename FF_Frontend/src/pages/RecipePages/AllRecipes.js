@@ -1,24 +1,19 @@
-import "./AllRecipes.css";
-
-import RecipeThree from "./TomatoSoup";
-import RecipeFour from "./FarmhousePizza";
-import RecipeFive from "./AlooParatha";
-import RecipeSix from "./recipesix";
-import RecipeSeven from "./recipeseven";
-import RecipeEight from "./recipeeight";
-import RecipeNine from "./recipenine";
-import RecipeTen from "./recipeten";
-
 import "./RecipeList.css";
 import { useState } from "react";
+import "./AllRecipes.css";
+import Dhokla from "./Dhokla";
+import FudgeCake from "./FudgeCake";
+import TarriPoha from "./TarriPoha";
 import PaneerTikka from "./PaneerTikka";
 import HoneyPotato from "./HoneyPotato";
 import TomatoSoup from "./TomatoSoup";
 import FarmhousePizza from "./FarmhousePizza";
 import AlooParatha from "./AlooParatha";
+import GreenSalad from "./GreenSalad";
+import Milkshake from "./milkshake";
 
 export default function Allrecipes() {
-  const [state, setState] = useState("");
+  const [state, setState] = useState("first");
 
   const recipeHandler = (e) => {
     console.log(e.target.id);
@@ -47,53 +42,123 @@ export default function Allrecipes() {
                 </tr> */}
 
                 <tr scope="col">
-                  <td id="first" className="recipe_list" scope="col">
+                  <td
+                    id="first"
+                    className="recipe_list"
+                    scope="col"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                  >
                     Paneer Tikka
                   </td>
                 </tr>
                 <tr scope="col">
-                  <td id="second" className="recipe_list" scope="col">
+                  <td
+                    id="second"
+                    className="recipe_list"
+                    scope="col"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                  >
                     Tangy Potato
                   </td>
                 </tr>
                 <tr scope="col">
-                  <td id="third" className="recipe_list" scope="col">
+                  <td
+                    id="third"
+                    className="recipe_list"
+                    scope="col"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                  >
                     Tomato Soup
                   </td>
                 </tr>
                 <tr scope="col">
-                  <td id="fourth" className="recipe_list" scope="col">
+                  <td
+                    id="fourth"
+                    className="recipe_list"
+                    scope="col"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                  >
                     Farmhouse Pizza
                   </td>
                 </tr>
                 <tr scope="col">
-                  <td id="fifth" className="recipe_list" scope="col">
+                  <td
+                    id="fifth"
+                    className="recipe_list"
+                    scope="col"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                  >
                     Aloo Paratha
                   </td>
                 </tr>
                 <tr scope="col">
-                  <td id="sixth" className="recipe_list" scope="col">
-                    F
+                  <td
+                    id="sixth"
+                    className="recipe_list"
+                    scope="col"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                  >
+                    Dhokla
                   </td>
                 </tr>
                 <tr scope="col">
-                  <td id="seventh" className="recipe_list" scope="col">
-                    G
+                  <td
+                    id="seventh"
+                    className="recipe_list"
+                    scope="col"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                  >
+                    Fudge Cake
                   </td>
                 </tr>
                 <tr scope="col">
-                  <td id="eighth" className="recipe_list" scope="col">
-                    H
+                  <td
+                    id="eighth"
+                    className="recipe_list"
+                    scope="col"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                  >
+                    Green Salad
                   </td>
                 </tr>
                 <tr scope="col">
-                  <td id="ninth" className="recipe_list" scope="col">
-                    I
+                  <td
+                    id="ninth"
+                    className="recipe_list"
+                    scope="col"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                  >
+                    Milkshake
                   </td>
                 </tr>
                 <tr scope="col">
-                  <td id="tenth" className="recipe_list" scope="col">
-                    J
+                  <td
+                    id="tenth"
+                    className="recipe_list"
+                    scope="col"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
+                  >
+                    Tarri Poha
                   </td>
                 </tr>
               </table>
@@ -108,11 +173,11 @@ export default function Allrecipes() {
           {state == "third" ? <TomatoSoup /> : null}
           {state == "fourth" ? <FarmhousePizza /> : null}
           {state == "fifth" ? <AlooParatha /> : null}
-          {state == "sixth" ? <RecipeSix /> : null}
-          {state == "seventh" ? <RecipeSeven /> : null}
-          {state == "eighth" ? <RecipeEight /> : null}
-          {state == "ninth" ? <RecipeNine /> : null}
-          {state == "tenth" ? <RecipeTen /> : null}
+          {state == "sixth" ? <Dhokla /> : null}
+          {state == "seventh" ? <FudgeCake /> : null}
+          {state == "eighth" ? <GreenSalad /> : null}
+          {state == "ninth" ? <Milkshake /> : null}
+          {state == "tenth" ? <TarriPoha /> : null}
         </div>
       </div>
     </>

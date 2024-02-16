@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import UserService from "../../services/UserService";
+import Swal from "sweetalert2";
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -141,7 +142,12 @@ export default function Login() {
                       className="col d-flex justify-content-center"
                       style={{ fontSize: "14px" }}
                     >
-                      <Link to="forgotpassword" data-dismiss="model">
+                      <Link
+                        onClick={() =>
+                          (window.location.href = "/user/forgotpassword")
+                        }
+                        data-dismiss="modal"
+                      >
                         Forgot password?
                       </Link>
                     </div>
@@ -151,7 +157,7 @@ export default function Login() {
                     type="submit"
                     className="btn btn-outline-primary btn-block mb-4 rounded-pill w-25"
                     style={{ marginLeft: "37%" }}
-                    data-dismiss="model"
+                    data-dismiss="modal"
                   >
                     Sign in
                   </button>
@@ -159,7 +165,12 @@ export default function Login() {
                   <div className="text-center" style={{ fontSize: "14px" }}>
                     <p>
                       Not a member?{" "}
-                      <Link to="/registration" data-dismiss="model">
+                      <Link
+                        // to="/user/registration"
+                        onClick={() =>
+                          (window.location.href = "/user/registration")
+                        }
+                      >
                         Register
                       </Link>
                     </p>

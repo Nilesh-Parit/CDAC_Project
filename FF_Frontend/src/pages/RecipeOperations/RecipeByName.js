@@ -15,10 +15,10 @@ export default function RecipeByName() {
       }
       //   console.log(info);
       document.getElementById(
-        "info-procedure"
+        "ingredients-span"
       ).innerHTML = `<p>${infoProcedure}</p>`;
       document.getElementById(
-        "info-ingredients"
+        "recipe-span"
       ).innerHTML = `<p>${infoCuisine}</p>`;
     });
     // }
@@ -30,7 +30,7 @@ export default function RecipeByName() {
       <br />
       <br />
       <br />
-      <div className="card ">
+      <div className="card " id="recipebyname-card">
         <div className="card-body" style={{ marginTop: "2%" }}>
           <h2 style={{ marginLeft: "15%" }}>
             <b>Search recipies by name</b>
@@ -55,8 +55,12 @@ export default function RecipeByName() {
           <div class="container text-center">
             <div class="row row-cols-1">
               <div class="col" id="infoCuisine"></div>
-              <div class="col" id="info-ingredients"></div>
-              <div class="col" id="info-procedure"></div>
+              <div class="col" id="info-ingredients">
+                <span id="ingredients-span"></span>
+              </div>
+              <div class="col" id="info-procedure">
+                <span id="recipe-span"></span>
+              </div>
             </div>
           </div>
           <div id="recipe-div"></div>

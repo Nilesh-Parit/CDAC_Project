@@ -140,6 +140,7 @@ export default function EditProfile() {
               type="text"
               name="firstname"
               className="form-control"
+              id="editp-fname"
               value={editedUser.firstname}
               onChange={handleInputChange}
             />
@@ -148,6 +149,7 @@ export default function EditProfile() {
             <input
               type="text"
               className="form-control"
+              id="editp-lname"
               name="lastname"
               value={editedUser.lastname}
               onChange={handleInputChange}
@@ -157,6 +159,7 @@ export default function EditProfile() {
             <input
               type="file"
               className="form-control"
+              id="editp-pimage"
               name="profileImage"
               onChange={handleImageChange}
             />
@@ -166,6 +169,7 @@ export default function EditProfile() {
               type="text"
               name="username"
               className="form-control"
+              id="editp-uname"
               value={editedUser.username}
               onChange={handleInputChange}
             />
@@ -174,6 +178,7 @@ export default function EditProfile() {
             <input
               type="password"
               className="form-control"
+              id="editp-pword"
               name="password"
               value={editedUser.password}
               onChange={handleInputChange}
@@ -183,6 +188,7 @@ export default function EditProfile() {
             <input
               type="email"
               className="form-control"
+              id="editp-email"
               name="email"
               value={editedUser.email}
               onChange={handleInputChange}
@@ -193,6 +199,7 @@ export default function EditProfile() {
               type="date"
               name="dateOfBirth"
               className="form-control"
+              id="editp-dob"
               value={editedUser.dateOfBirth}
               onChange={handleInputChange}
             />
@@ -215,6 +222,7 @@ export default function EditProfile() {
               type="text"
               name="phonenumber"
               className="form-control"
+              id="editp-num"
               value={editedUser.phonenumber}
               onChange={handleInputChange}
             />
@@ -224,6 +232,7 @@ export default function EditProfile() {
               type="text"
               name="preferences"
               className="form-control"
+              id="editp-pref"
               value={editedUser.preferences}
               onChange={handleInputChange}
             />
@@ -233,6 +242,7 @@ export default function EditProfile() {
               type="text"
               name="allergies"
               className="form-control"
+              id="editp-alle"
               value={editedUser.allergies}
               onChange={handleInputChange}
             />

@@ -26,7 +26,7 @@ export default function Home() {
           <img
             src="images/Indiancuisine.jpg"
             // data-src="/images/child.png"
-            alt="Computer"
+            alt="indiancuisine"
             className="features__img lazy-img"
           />
           <div className="features__feature">
@@ -72,9 +72,12 @@ export default function Home() {
             </p>
             <h5>
               <Link
-                to="/addrecipe"
+                to="/user/addrecipe"
                 // className="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
                 id="clickhere"
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                }}
               >
                 <b>Add your recipe→</b>
               </Link>
@@ -108,9 +111,12 @@ export default function Home() {
             </p>
             <h5>
               <Link
-                to="/allrecipes"
+                to="/user/allrecipes"
                 // className="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
                 id="clickhere"
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                }}
               >
                 <b>More recipes on your way→</b>
               </Link>
@@ -261,7 +267,8 @@ export default function Home() {
           id="btn-regt"
           className="btn rounded-pill"
           onClick={() => {
-            navigate("/registration");
+            navigate("/user/registration");
+            window.scrollTo(0, 0);
           }}
         >
           <b>Register</b>

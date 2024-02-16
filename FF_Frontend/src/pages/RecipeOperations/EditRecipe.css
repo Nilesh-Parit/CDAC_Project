@@ -1,6 +1,6 @@
 #editrecipe-card {
   margin-top: 2%;
-  margin-left: 30%;
+  margin-left: 25%;
   width: 50%;
 }
 
@@ -11,16 +11,18 @@
 #totalCalories,
 #recipeType,
 #recipeDescription {
-  width: 80%;
+  width: 120%;
+  margin-left: -20%;
 }
 
 #editr-card-body {
-  margin-left: 10%;
+  margin-left: 0%;
+  width: 120%;
 }
 
 #editrheader {
-  margin-left: -20%;
+  margin-left: 5%;
 }
 #editr-btn {
-  margin-left: 25%;
+  margin-left: 15%;
 }

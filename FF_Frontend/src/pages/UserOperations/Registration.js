@@ -257,7 +257,7 @@ export default function Registration() {
               <label for="uname">Username</label>
               <input
                 type="text"
-                id="uname"
+                id="reg-uname"
                 aria-describedby="uname"
                 placeholder="Enter your username"
                 className={`form-control ${errors.username && "is-invalid"}`}
@@ -317,7 +317,7 @@ export default function Registration() {
               <label for="pword">Password</label>
               <input
                 type="password"
-                id="pword"
+                id="reg-pword"
                 aria-describedby="pword"
                 placeholder="Enter your password"
                 className={`form-control ${errors.password && "is-invalid"}`}
@@ -334,6 +334,7 @@ export default function Registration() {
                 }`}
                 placeholder="Re-enter your password"
                 value={formDetails.confirmPassword}
+                id="reg-cnfpword"
                 onChange={(e) =>
                   setFormDetails({
                     ...formDetails,

@@ -68,7 +68,7 @@ export default function RecipeDetails() {
                 </div>
               )}
             </div>
-            <Link to="/userrecipes" className="btn btn-primary">
+            <Link to="/user/userrecipes" className="btn btn-primary">
               Back
             </Link>
           </div>
