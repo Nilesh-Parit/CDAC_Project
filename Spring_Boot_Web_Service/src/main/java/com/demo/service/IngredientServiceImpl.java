@@ -42,7 +42,7 @@ public class IngredientServiceImpl implements IngredientService {
 	       // r.getRecipeIngredients().add(ingredient);
 	        return true;
 	    } catch (Exception e) {
-	    	System.out.println("Error addnewrecipe");
+	    	System.out.println("Error Service Add New Ingredient");
 	        return false;
 	    }
 	}
@@ -84,9 +84,7 @@ public class IngredientServiceImpl implements IngredientService {
     @Transactional
     public Boolean addAllIngredients(List<Ingredient> recipeIngredients, Recipe r) {
         try {
-        	System.out.println("List is");
         	for(Ingredient i:recipeIngredients) {
-        		System.out.println(i);
         	}
             for (Ingredient ingredient : recipeIngredients) {
                 ingredient.setRecipe(r);

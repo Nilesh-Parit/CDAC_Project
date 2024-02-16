@@ -1,4 +1,5 @@
 package com.demo.models;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import com.fasterxml.jackson.annotation.JsonIgnore; 
@@ -92,6 +93,12 @@ public class Ingredient {
 	public void setRecipe(Recipe r) {
 		this.recipe = r;
 	}
+	
+	
+	@Override
+	public boolean equals(Object obj) {
+        return (this.ingredientName == ((Ingredient)obj).ingredientName);
+}
 
 //	@Override
 //	public String toString() {

@@ -32,7 +32,6 @@ public class FeedbackServiceImpl implements FeedbackService {
                 Feedback feedback=new Feedback();
                 feedback.setFeedback(f);      
                 feedback.setUser(user);
-                System.out.println(userId);// Associate the user with the feedback
                 fdao.save(feedback); // Save the feedback
                 return true;
             }
