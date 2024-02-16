@@ -1,4 +1,5 @@
 package com.demo.models;
+
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -80,6 +81,7 @@ public class User {
     @JsonIgnore
     @OneToMany
     private List<Comment> userComments;
+    
 
     public User() {
     	super();
@@ -151,8 +153,8 @@ public class User {
 	public byte[] getImages() {
         return user_image;
     }
-
-    public void setImages(byte[] images) {
+	
+	public void setImages(byte[] images) {
         this.user_image = images;
     }
 
@@ -307,6 +309,5 @@ public class User {
 //				+ ", preferences=" + preferences + ", allergies=" + allergies + ", user_image="
 //				+ Arrays.toString(user_image) + ", userRecipes=" + userRecipes + ", userFeedbacks=" + userFeedbacks
 //				+ ", m=" + m + ", userComments=" + userComments + "]";
-//	}
-	
+//	}	
 }

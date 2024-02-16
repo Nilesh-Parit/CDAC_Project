@@ -1,4 +1,5 @@
 package com.demo.controller;
+
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -87,5 +88,4 @@ public class IngredientController {
 //	    else
 //	        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 //	}
-	
 }

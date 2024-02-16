@@ -1,4 +1,5 @@
 package com.demo.models;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 

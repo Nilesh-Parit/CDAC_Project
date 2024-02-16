@@ -1,4 +1,5 @@
 package com.demo.controller;
+
 import java.io.IOException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-
+import com.demo.Authorization.AuthStatus;
 import com.demo.models.Comment;
 import com.demo.models.Feedback;
 import com.demo.models.Recipe;
@@ -28,11 +29,15 @@ public class UserController {
 	@Autowired
 	UserService uservice;
 	
+	@Autowired
+    private AuthStatus authStatus;
+	
 	@GetMapping("/users")
 	public ResponseEntity<List<User>> getallusers(){
 		List<User> ulist=uservice.getAllUsers();
 		return ResponseEntity.ok(ulist);
 	}
+
 	
 	@PutMapping("/user/{username}/updatepassword")
 	public ResponseEntity<String> updatePassword(@RequestBody User u) {
@@ -42,12 +47,20 @@ public class UserController {
 	    else
 	        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found or password not updated");
 	}
+	
+	@GetMapping("/logout")
+	    public ResponseEntity<Boolean> logout() {
+		 authStatus.setIsAuthenticated(false);
+		 return ResponseEntity.ok(authStatus.getIsAuthenticated());
+	    }
 
 	@PostMapping("/login")
 	public ResponseEntity<User> login(@RequestBody User user) {
 	    User u = uservice.login(user.getUsername(), user.getPassword());
-	    if (u != null)
-	        return ResponseEntity.ok(u);
+	    if (u != null) {
+	    	authStatus.setIsAuthenticated(true);
+	    	return ResponseEntity.ok(u);
+	    }  
 	    else 
 	        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
 	}
@@ -55,7 +68,6 @@ public class UserController {
 	@GetMapping("/user/{userid}")
 	public ResponseEntity<User> getById(@PathVariable int userid){
 		User u=uservice.getUserById(userid);
-		System.out.println(u.getImages());
 		if (u!=null)
 			return ResponseEntity.ok(u);
 		else
@@ -65,8 +77,6 @@ public class UserController {
 //	@PostMapping("/user")
 //	public ResponseEntity<String> addNewUser(@RequestBody User u){
 //		Boolean status=uservice.addNewUser(u);
-//		System.out.println(u.getDateOfBirth());
-//		System.out.println("abhay");
 //		if(status)
 //			return ResponseEntity.ok("User added successfully");
 //		else
@@ -151,7 +161,47 @@ public class UserController {
             user.setAllergies(allergies);
             user.setImages(imageBytes);
 
-            uservice.addNewUser(user);
+            uservice.updateUserById(user);
+
+            return new ResponseEntity<>("Profile updated successfully", HttpStatus.OK);
+        } catch (IOException e) {
+            return new ResponseEntity<>("Error updating profile", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    
+    
+    @PutMapping("/admin/{userId}")
+    public ResponseEntity<?> updateadminProfile(@PathVariable Integer userId, @RequestParam("profileImage") MultipartFile profileImage,
+                                           @RequestParam("firstname") String firstname, @RequestParam("lastname") String lastname,
+                                           @RequestParam("username") String username, @RequestParam("password") String password,
+                                           @RequestParam("email") String email, @RequestParam("dateOfBirth") String dateOfBirth,
+                                           @RequestParam("address") String address, @RequestParam("role")String role,@RequestParam("gender") String gender,
+                                           @RequestParam("phonenumber") String phonenumber, @RequestParam("preferences") String preferences,
+                                           @RequestParam("allergies") String allergies) {
+        try {
+            User user = uservice.getUserById(userId);
+
+            if (user == null) {
+                return new ResponseEntity<>("User not found", HttpStatus.NOT_FOUND);
+            }
+
+            byte[] imageBytes = profileImage.getBytes();
+
+            user.setFirstname(firstname);
+            user.setLastname(lastname);
+            user.setUsername(username);
+            user.setPassword(password);
+            user.setRole(role);
+            user.setEmail(email);
+            user.setDateOfBirth(dateOfBirth);
+            user.setAddress(address);
+            user.setGender(gender);
+            user.setPhonenumber(phonenumber);
+            user.setPreferences(preferences);
+            user.setAllergies(allergies);
+            user.setImages(imageBytes);
+
+            uservice.updateUserById(user);
 
             return new ResponseEntity<>("Profile updated successfully", HttpStatus.OK);
         } catch (IOException e) {
@@ -170,12 +220,12 @@ public class UserController {
 	
 	@GetMapping("/user/{userId}/recipes")
 	public List<Recipe> getUserRecipes(@PathVariable int userId) {
+		try {
 	    List<Recipe> recipes = uservice.getUserRecipes(userId);
-	    System.out.println(recipes);
-	    if (recipes != null)
-	        return recipes;
-	    else
-	        return null;
+	    return recipes;
+		}catch(Exception e) {
+			return null;
+		}    
 	}
 	
 	@GetMapping("/user/{userId}/feedbacks")

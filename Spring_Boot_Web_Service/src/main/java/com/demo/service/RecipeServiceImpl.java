@@ -51,6 +51,7 @@ public class RecipeServiceImpl implements RecipeService {
 			r1.setInstructions(r.getInstructions());
 			r1.setRecipeType(r.getRecipeType());
 			r1.setCookTime(r.getCookTime());
+			r1.setRecipeDescription(r.getRecipeDescription());
 			r1.setTotalCalories(r.getTotalCalories());
 			r1.setRecipeTags(r.getRecipeTags());
 			r1.setRecipeIngredients(r.getRecipeIngredients());
@@ -105,7 +106,7 @@ public class RecipeServiceImpl implements RecipeService {
 	public List<Ingredient> getIngredientsByRecipe(int recipeId) {
 	    Recipe recipe = rdao.findById(recipeId).orElse(null);
 	    if (recipe != null) {
-	    	System.out.println("recipe Ingredients are:"+recipe.getRecipeIngredients());
+	    	//System.out.println("recipe Ingredients are:"+recipe.getRecipeIngredients());
 	        return recipe.getRecipeIngredients();
 	    } else {
 	        return null;

@@ -1,4 +1,5 @@
 package com.demo.models;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 //import com.fasterxml.jackson.annotation.JsonIgnore; 
@@ -57,7 +58,5 @@ public class Feedback {
 
 	public Feedback() {
 		super();
-	}
-	
-    
+	}   
 }
