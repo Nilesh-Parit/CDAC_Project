@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import UserService from '../../Service/UserService';
-import { Link,Navigate   } from 'react-router-dom';
-import UserProfile from './UserProfile';
+import React, { useState, useEffect } from "react";
+import UserService from "../../Service/UserService";
+import { Navigate } from "react-router-dom";
+import UserProfile from "./UserProfile";
 
 export default function UserDashboard() {
   const [user, setUser] = useState({});
@@ -9,11 +9,10 @@ export default function UserDashboard() {
   const [isadmin, setisadmin] = useState(false);
 
   useEffect(() => {
-    const userId = localStorage.getItem('userId');
+    const userId = localStorage.getItem("userId");
     if (!userId) {
       setLoggedIn(false);
-    }
-    else {
+    } else {
       const fetchUserData = async () => {
         try {
           const userResponse = await UserService.getUserById(userId);
@@ -23,7 +22,7 @@ export default function UserDashboard() {
             setisadmin(true);
           }
         } catch (error) {
-          console.error('Error fetching user data:', error);
+          console.error("Error fetching user data:", error);
         }
       };
       fetchUserData();
@@ -40,9 +39,8 @@ export default function UserDashboard() {
 
   return (
     <>
-      
       <h2>Welcome, {`${user.firstname} ${user.lastname}`}</h2>
-      <UserProfile/>
+      <UserProfile />
     </>
   );
 }
