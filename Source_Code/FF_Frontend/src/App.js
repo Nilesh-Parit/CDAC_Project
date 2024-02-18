@@ -1,202 +1,113 @@
-import "./App.css";
-import React from "react";
-import { BrowserRouter, Routes, Route, Redirect } from "react-router-dom";
-import Registration from "./pages/UserOperations/Registration";
-import Home from "./pages/LandingPage/Home";
-import Navbar from "../src/component/Navbar/Navbar";
-import Footer from "../src/component/Footer/Footer";
-import NavbarReg from "../src/component/Navbar/NavbarForRegistration";
-import Allrecipes from "./pages/RecipePages/AllRecipes";
-import AddRecipe from "./pages/RecipeOperations/AddRecipe";
-import RecipeByName from "./pages/RecipeOperations/RecipeByName";
-import ForgotPassword from "./pages/UserOperations/ForgotPassword";
-import EditProfile from "./pages/UserOperations/EditProfile";
-import NavbarAfterLogin from "./component/Navbar/NavbarAfterLogin";
-import UserRecipes from "./pages/RecipeOperations/UserRecipes";
-import EditRecipe from "./pages/RecipeOperations/EditRecipe";
-import FeedbackPage from "./pages/UserOperations/Feedback";
-import RecipeDetails from "./pages/RecipePages/RecipeDetails";
-import UserPage from "./pages/UserPages/UserPage";
-import AdminDashboard from "./pages/AdminPages/Dashboard";
-import AllUserRecipies from "./pages/AdminPages/AllUserRecipies";
-import AboutUs from "./component/Footer/FooterComponents/AboutUs";
-import ContactUs from "./component/Footer/FooterComponents/ContactUs";
-import TermsOfUse from "./component/Footer/FooterComponents/TermsOfUse";
-import PrivacyPolicy from "./component/Footer/FooterComponents/PrivacyPolicy";
+// import "./Style/App.css";
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
+import MainNavBar from "./Components/MainNavbar";
+import { Route,Routes } from "react-router-dom";
+import Login from "./Pages/LoginCred/Login";
+import Register from "./Pages/LoginCred/Register";
+import Home from "./Pages/Home";
+import Discover from "./Pages/Discover";
+import MealPlanning from "./Pages/MealPlanning";
+import AboutUs from "./Pages/FooterComponents/AboutUs";
+import ContactUs from "./Pages/FooterComponents/ContactUs";
+import TermsOfUse from "./Pages/FooterComponents/TermsOfUse";
+import PrivacyPolicy from "./Pages/FooterComponents/PrivacyPolicy";
+import ForgotPassword from "./Pages/LoginCred/ForgetPassword";
+import UserDashboard from "./Pages/User/UserDashboard";
+import RecipeForm from "./Pages/RecipeForm";
+import UserRecipes from "./Pages/User/UserRecipes";
+import Feedback from "./Pages/Feedback";
+import UserProfile from "./Pages/User/UserProfile";
+import RecipeDetails from "./Pages/RecipeDetails";
+import EditRecipe from "./Pages/User/EditRecipe";
+import EditProfile from "./Pages/User/EditProfile";
+import RegisterImage from "./Pages/LoginCred/RegisterImage";
+import AdminDashboard from "./Pages/Admin/AdminDashboard";
+import AdminGetAllUsers from "./Pages/Admin/AdminGetAllUsers";
+import AdminGetAllRecipes from "./Pages/Admin/AdminGetAllRecipes";
+import AdminGetAllFeedbacks from "./Pages/Admin/AdminGetAllFeedbacks";
+import AdminProfile from "./Pages/Admin/AdminProfile";
+import EditAdminProfile from "./Pages/Admin/EditAdminProfile";
+import AdminViewRecipe from "./Pages/Admin/AdminViewRecipe";
+import AdminViewUser from "./Pages/Admin/AdminViewUser";
+import MainNavbar from "./Components/MainNavbar";
+import LogNavbar from "./Pages/User/LogNavbar";
+import Particle from "./Pages/Particle";
+import AllRecipes from "./Pages/User/AllRecipes";
+import AdminNavbar from "./Pages/Admin/AdminNavbar";
+
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          {/* <Route exact path="/">
-            <Redirect to="/user/home" />
-          </Route> */}
+       {/* <Route path="/register" element={<Register></Register>}></Route> */}
+       {/* <Header></Header>
+       <MainNavBar></MainNavBar> */}
+       <Particle/>
+       <Routes>
+        <Route path="/" element ={<><MainNavBar/><Home/> </>}/>
 
-          <Route
-            path="/"
-            element={
-              <div>
-                <Navbar />
-                <Home />
-              </div>
-            }
-          />
+       <Route path="/login" element={<><MainNavbar/> <Login/> </>}/>
 
-          <Route
-            path="/user/registration"
-            element={
-              <>
-                <NavbarReg />
-                <Registration />
-              </>
-            }
-          />
-          <Route
-            path="/user/allrecipes"
-            element={
-              <>
-                <NavbarReg />
-                <Allrecipes />
-              </>
-            }
-          ></Route>
-          <Route
-            path="/user/addrecipe"
-            element={
-              <>
-                <NavbarAfterLogin />
-                <AddRecipe />
-              </>
-            }
-          ></Route>
-          <Route
-            path="/user/recipebyname"
-            element={
-              <>
-                <NavbarReg />
-                <RecipeByName />
-              </>
-            }
-          ></Route>
-          <Route
-            path="/user/forgotpassword"
-            element={
-              <>
-                <NavbarReg />
-                <ForgotPassword />
-              </>
-            }
-          ></Route>
-          <Route
-            path="/user/userpage"
-            element={
-              <>
-                <NavbarAfterLogin />
-                <UserPage />
-              </>
-            }
-          ></Route>
-          <Route
-            path="/user/editprofile"
-            element={
-              <>
-                <NavbarAfterLogin />
-                <EditProfile />
-              </>
-            }
-          ></Route>
-          <Route
-            path="/user/userrecipes"
-            element={
-              <>
-                <NavbarAfterLogin />
-                <UserRecipes />
-              </>
-            }
-          ></Route>
-          <Route
-            path="/user/editrecipe/:id"
-            element={
-              <>
-                <NavbarAfterLogin />
-                <EditRecipe />
-              </>
-            }
-          ></Route>
-          <Route
-            path="/user/feedback"
-            element={
-              <>
-                <NavbarAfterLogin />
-                <FeedbackPage />
-              </>
-            }
-          ></Route>
-          <Route
-            path="/user/recipedetails/:id"
-            element={
-              <>
-                <NavbarAfterLogin />
-                <RecipeDetails />
-              </>
-            }
-          ></Route>
-          <Route
-            path="/admin/dashboard"
-            element={
-              <>
-                <Navbar />
-                <AdminDashboard />
-              </>
-            }
-          ></Route>
-          <Route
-            path="/admin/alluserrecipies"
-            element={
-              <>
-                <AllUserRecipies />
-              </>
-            }
-          ></Route>
+       <Route path="/register" element={<> <MainNavBar/>  <RegisterImage/> </>}/>
 
-          <Route
-            path="/user/aboutus"
-            element={
-              <>
-                <AboutUs />
-              </>
-            }
-          ></Route>
-          <Route
-            path="/user/contactus"
-            element={
-              <>
-                <ContactUs />
-              </>
-            }
-          ></Route>
-          <Route
-            path="/user/termsofuse"
-            element={
-              <>
-                <TermsOfUse />
-              </>
-            }
-          ></Route>
-          <Route
-            path="/user/privacypolicy"
-            element={
-              <>
-                <PrivacyPolicy />
-              </>
-            }
-          ></Route>
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+       <Route path="/home" element={ <> <MainNavBar/> <Home/> </>}/>
+
+       <Route path="/discover" element={<> <MainNavBar/> <Discover/></> }/>
+
+       <Route path="/mealplanning" element={<> <LogNavbar/> <MealPlanning/></>}/>
+
+       <Route path="/aboutus" element={<><MainNavBar/><AboutUs/></>}/>
+
+       <Route path="/contactus" element={<><MainNavBar/><ContactUs/></>}/>
+
+       <Route path="/termsofuse" element={<><MainNavBar/><TermsOfUse/></>}/>
+
+       <Route path="/privacypolicy" element={<><MainNavBar/><PrivacyPolicy/></>}/>
+
+       <Route path="/forgetpassword" element={<> <MainNavBar/> <ForgotPassword/> </>}/>
+
+       <Route path="/userdashboard" element={<> <LogNavbar/> <UserDashboard/> </>}/>
+
+       <Route path="/userrecipes" element={<> <UserRecipes/></>}/>
+
+       <Route path="/addnewrecipe" element={<> <LogNavbar/> <RecipeForm/></>}/>
+
+       <Route path="/feedback" element={<><LogNavbar/><Feedback/></>}/>
+
+       <Route path="/userprofile" element={<><LogNavbar/><UserProfile/></>}/>
+
+       <Route path="/allrecepies" element={<><LogNavbar/><AllRecipes/></>}/>
+
+
+       {/* <Route path="/viewrecipe" element={<UserProfile></UserProfile>}></Route> */}
+       
+       <Route path="/view/:id" element={<RecipeDetails></RecipeDetails>}></Route>
+
+       <Route path="/adminviewuser/:id" element={<><AdminNavbar/><AdminViewUser></AdminViewUser></>}/>
+
+       <Route path="/edit/:id" element={<><AdminNavbar/><EditRecipe></EditRecipe></>}></Route>
+
+       <Route path="/editprofile" element={<><LogNavbar/><EditProfile></EditProfile></>}></Route>
+
+       {/* All Admin */}
+
+       <Route path="/adminDashboard" element={<><AdminNavbar/><AdminDashboard/></>}/>
+
+       <Route path="/adminGetAllUsers" element={<><AdminNavbar/><AdminGetAllUsers/></>}></Route>
+
+       <Route path="/adminGetAllRecipes" element={<><AdminNavbar/><AdminGetAllRecipes/></>}></Route>
+
+       <Route path="/adminGetAllFeedbacks" element={<><AdminNavbar/><AdminGetAllFeedbacks/></>}></Route>
+
+       <Route path="/adminProfile" element={<><AdminNavbar/><AdminProfile></AdminProfile></>}></Route>
+
+       <Route path="/editAdminProfile" element={<><AdminNavbar/><EditAdminProfile></EditAdminProfile></>}></Route>
+
+       <Route path="/adminviewrecipe/:id" element={<><AdminNavbar/><AdminViewRecipe></AdminViewRecipe></>}></Route>
+       </Routes>
+       <Footer></Footer>
     </>
   );
 }
-
 export default App;
