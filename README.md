@@ -17,7 +17,7 @@ FlavourFeed is a web application developed as a part of the CDAC PGDAC project.
 
 ## Credits
 
-This project was developed by 
+This project is developed by :-
 1. Anurag Anant Ghosekar
 2. Abhay Sanjay Biramane
 3. Abhishek Vijay Gaikwad
