@@ -236,6 +236,7 @@ export default function RegisterUser() {
           <label>Date of Birth:</label>
           <input
             type="date"
+			max="2007-01-01"
             className={`form-control ${errors.dateOfBirth && "is-invalid"}`}
             value={formDetails.dateOfBirth}
             onChange={(e) => setFormDetails({ ...formDetails, dateOfBirth: e.target.value })}

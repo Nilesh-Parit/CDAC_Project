@@ -142,7 +142,7 @@ export default function EditProfile() {
               </div>
               <div className="form-group">
                 <label htmlFor="dateOfBirth">Date of Birth:</label>
-                <input type="date" name="dateOfBirth" value={editedUser.dateOfBirth} onChange={handleInputChange} />
+                <input type="date" max="2007-01-01" name="dateOfBirth" value={editedUser.dateOfBirth} onChange={handleInputChange} />
               </div>
               <div className="form-group">
                 <label htmlFor="address">Address:</label>
