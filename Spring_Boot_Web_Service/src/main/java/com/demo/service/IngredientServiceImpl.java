@@ -36,8 +36,8 @@ public class IngredientServiceImpl implements IngredientService {
 	    	i.setRecipe(r);
 	        idao.save(i);
 	        ingredientlist.add(ingredient);
-	        r.setRecipeIngredients(ingredientlist);
-	       // r.getRecipeIngredients().add(ingredient);
+	        //r.setRecipeIngredients(ingredientlist);
+	        r.getRecipeIngredients().add(ingredient);
 	        return true;
 	    } catch (Exception e) {
 	    	System.out.println("Error Service Add New Ingredient");
